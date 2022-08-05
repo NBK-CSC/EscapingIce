@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,7 +11,7 @@ public class Ice : MonoBehaviour
     private Rigidbody _rb;
     private BoxCollider _boxCollider;
     
-    public event UnityAction<Vector3> BecamePuddle;
+    public event UnityAction BecamePuddle;
 
     private void Start()
     {
@@ -20,28 +19,37 @@ public class Ice : MonoBehaviour
         _boxCollider = transform.GetComponent<BoxCollider>();
     }
 
-    private void Update()
+    private void OnEnable()=> BecamePuddle += BecomePuddle;
+    private void OnDisable()=>BecamePuddle -= BecomePuddle;
+
+
+    private void FixedUpdate()
     {
+        var inputHorizontal = Input.GetAxis("Horizontal");
         if (!TryBecomePuddle())
         {
-            Move();
+            Move(inputHorizontal);
             Melt();
         }
         else
         {
-            BecomePuddle();
-            Destroy(transform.gameObject);
+            //gameObject.SetActive(false);
+            BecamePuddle?.Invoke();
         }
     }
 
     private void BecomePuddle()
     {
-        Instantiate(_puddlePrefab, _rb.position, _rb.rotation);
+        Debug.Log("test");
+        var puddlePosition = new Vector3(_rb.position.x, 3.2f, _rb.position.z);
+        Instantiate(_puddlePrefab, puddlePosition, _rb.rotation);
+        BecamePuddle -= BecomePuddle;
     }
 
-    private void Move()
+    private void Move(float dir)
     {
-        _rb.MovePosition(_rb.position+_speed*Vector3.back);
+        Vector3 dirMovement = new Vector3(-dir, 0, -1);
+        _rb.MovePosition(_rb.position+_speed*dirMovement);
     }
 
     private bool TryBecomePuddle()
