@@ -4,29 +4,22 @@ public class MainController:MonoBehaviour
 {
     [SerializeField] private Transform _startPoint;
     [SerializeField] private CameraFollower _camera;
-    [SerializeField] private int _amountIce;
-    [SerializeField] private Ice _icePrefab;
-    [SerializeField] private Transform _iceContainer;
+    [SerializeField] private Transform _cameraStartPoint;
+    [SerializeField] private IcesController _icesController;
 
-    private Ice _currentIceObject;
-    
-    private PoolMono<Ice> _poolIces;
-
-    private void Start()    
+    private void OnEnable()
     {
-        _poolIces = new PoolMono<Ice>(_amountIce, _icePrefab, _iceContainer);
-        Reset();
+        _icesController.IceHasChanged += ChangeFollowing;
     }
 
-    private void Reset()
+    private void OnDisable()
     {
-        if (_currentIceObject!=null)
-            _currentIceObject.BecamePuddle -= Reset;
-        if (_poolIces.TryGetObject(out _currentIceObject))
-        {
-            _currentIceObject.BecamePuddle += Reset;
-            _currentIceObject.transform.position = _startPoint.position;
-            _camera.TargetTransform = _currentIceObject.transform;
-        }
-}
+        _icesController.IceHasChanged -= ChangeFollowing;
+    }
+
+    private void ChangeFollowing(Ice ice)
+    {
+        _camera.transform.position = _cameraStartPoint.position;
+        _camera.TargetTransform = ice.transform;
+    }
 }

@@ -8,7 +8,8 @@ public abstract class Follower : MonoBehaviour
     
     protected void Move(float deltaTime)
     {
-        if (_targetTransform==null) return;
+        //Debug.Log(_targetTransform);
+        //if (_targetTransform == null) return;
         transform.position =
             Vector3.Lerp(transform.position, _targetTransform.position + _offset, deltaTime * _smoothing);
     }
