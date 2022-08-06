@@ -3,17 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="9ee59eac-49cd-4a6f-a34a-acb87c547ebe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Puddle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Puddle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ice.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ice.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BlockBoard.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BlockBoard.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Follower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Follower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeactivationTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeactivationTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IcesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IcesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puddle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puddle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Surface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Desk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Surface.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Desk.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SurfaceGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeskGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SurfaceGenerator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeskGenerator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerGeneratePoint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerGeneratePoint.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DeactivationTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Follower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ice.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -89,7 +91,7 @@
       <workItem from="1659697588704" duration="5957000" />
       <workItem from="1659720110706" duration="1192000" />
       <workItem from="1659721451093" duration="13538000" />
-      <workItem from="1659773392789" duration="17453000" />
+      <workItem from="1659773392789" duration="23913000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MainController:MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class MainController:MonoBehaviour
     [SerializeField] private CameraFollower _camera;
     [SerializeField] private Transform _cameraStartPoint;
     [SerializeField] private IcesController _icesController;
+
+    public event UnityAction FollowingChanged;
 
     private void OnEnable()
     {
@@ -21,5 +24,6 @@ public class MainController:MonoBehaviour
     {
         _camera.transform.position = _cameraStartPoint.position;
         _camera.TargetTransform = ice.transform;
+        FollowingChanged?.Invoke();
     }
 }

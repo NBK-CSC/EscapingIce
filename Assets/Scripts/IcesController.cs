@@ -14,6 +14,7 @@ public class IcesController:MonoBehaviour
     
     private Ice _currentIceObject;
     private PoolMono<Ice> _poolIces;
+    
     public event UnityAction<Ice> IceHasChanged;
     public event UnityAction<Ice> IceDeactivatied;
 
