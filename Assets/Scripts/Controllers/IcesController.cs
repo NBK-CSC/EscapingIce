@@ -35,10 +35,7 @@ public class IcesController:MonoBehaviour
 
     private void MakeIceMelt()
     {
-        if (_currentIceObject.CanMelted())
-            _currentIceObject.MeltAway();
-        else
-            _currentIceObject.Diactivate();
+        _currentIceObject.MeltAway();
     }
 
     private void ChangeIceAndSpawn()

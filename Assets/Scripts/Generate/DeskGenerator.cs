@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DeskGenerator : MonoBehaviour
 {
-    [SerializeField] private int _amountSurface;
+    [SerializeField] private int _amountDesk;
     [SerializeField] private int _startCountDesk;
     [SerializeField] private Desk _deskPrefab;
     [SerializeField] private Transform _deskContainer;
@@ -20,7 +20,7 @@ public class DeskGenerator : MonoBehaviour
     
     private void Awake()
     {
-        _pool = new PoolMono<Desk>(_amountSurface, _deskPrefab, _deskContainer);
+        _pool = new PoolMono<Desk>(_amountDesk, _deskPrefab, _deskContainer);
         _deskOnScenes = new List<Desk>();
     }
 

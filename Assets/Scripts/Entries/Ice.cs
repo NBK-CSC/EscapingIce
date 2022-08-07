@@ -65,7 +65,7 @@ public class Ice : MonoBehaviour
 
     private void PlayParticles()
     {
-        if (!CanMelted())
+        if (!LocateOnGround())
             return;
         _particleTraceMelt.Play();
         _particleSpray.Play();
@@ -96,7 +96,7 @@ public class Ice : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public bool CanMelted()
+    private bool LocateOnGround()
     {
         Ray ray1 = new Ray(_rayTransform1.position, -_rayTransform1.up);
         Ray ray2 = new Ray(_rayTransform2.position, -_rayTransform2.up);
@@ -106,11 +106,18 @@ public class Ice : MonoBehaviour
 
     public void MeltAway()
     {
-        Melted?.Invoke();
-        SetDefault();
+        if (LocateOnGround())
+        {
+            Melted?.Invoke();
+            SetDefault();
+        }
+        else
+        {
+            Diactivate();
+        }
     }
     
-    public void Diactivate()
+    private void Diactivate()
     {
         Diactivated?.Invoke();
         SetDefault();
