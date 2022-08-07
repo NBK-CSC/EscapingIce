@@ -8,8 +8,11 @@ public class Ice : MonoBehaviour
     [SerializeField] private float _frictionForce;
     [SerializeField] private float _minSpeed;
     [SerializeField] private float _meltingFactor;
-    [SerializeField] private float _minY;
-    
+    [SerializeField] private float _distanceCheckGround;
+    [SerializeField] private ParticleSystem _particleTraceMelt;
+    [SerializeField] private ParticleSystem _particleSpray;
+    [SerializeField] private Transform _rayTransform1;
+    [SerializeField] private Transform _rayTransform2;
     [SerializeField] private Transform _particleContainer;
     
     private Vector3 _sizeBoxCollider;
@@ -56,9 +59,18 @@ public class Ice : MonoBehaviour
     {
         Vector3 dirMovement = new Vector3(dir, 0, 1);
         _rb.MovePosition(_rb.position+_speed*dirMovement);
+        PlayParticles();
         ReduceFastSpeed();
     }
-    
+
+    private void PlayParticles()
+    {
+        if (!CanMelted())
+            return;
+        _particleTraceMelt.Play();
+        _particleSpray.Play();
+    }
+
     private void ReduceFastSpeed()
     {
         if (_speed > _minSpeed)
@@ -86,7 +98,10 @@ public class Ice : MonoBehaviour
 
     public bool CanMelted()
     {
-        return transform.position.y<_minY;
+        Ray ray1 = new Ray(_rayTransform1.position, -_rayTransform1.up);
+        Ray ray2 = new Ray(_rayTransform2.position, -_rayTransform2.up);
+        return Physics.Raycast(ray1, out RaycastHit hit1, _distanceCheckGround) ||
+               Physics.Raycast(ray2, out RaycastHit hit2, _distanceCheckGround);
     }
 
     public void MeltAway()
