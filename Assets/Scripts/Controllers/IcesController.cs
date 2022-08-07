@@ -11,7 +11,6 @@ public class IcesController:MonoBehaviour
     [SerializeField] private Transform _startPoint;
     [SerializeField] private Button _button;
     
-    
     private Ice _currentIceObject;
     private PoolMono<Ice> _poolIces;
     
@@ -20,31 +19,46 @@ public class IcesController:MonoBehaviour
 
     private void OnEnable()
     {
-        _button.onClick.AddListener(ChangeIce);
+        _button.onClick.AddListener(MakeIceMelt);
     }
 
     private void OnDisable()
     {
-        _button.onClick.RemoveListener(ChangeIce);
+        _button.onClick.RemoveListener(MakeIceMelt);
     }
 
     private void Start()
     {
         _poolIces = new PoolMono<Ice>(_amountIce, _icePrefab, _iceContainer);
+        ChangeIceAndSpawn();
+    }
+
+    private void MakeIceMelt()
+    {
+        if (_currentIceObject.CanMelted())
+            _currentIceObject.MeltAway();
+        else
+            _currentIceObject.Diactivate();
+    }
+
+    private void ChangeIceAndSpawn()
+    {
+        if (_currentIceObject != null)
+            IceDeactivatied?.Invoke(_currentIceObject);
         ChangeIce();
     }
-    
+
     private void ChangeIce()
     {
         if (_currentIceObject != null)
         {
-            _currentIceObject.BecamePuddle -= ChangeIce;
-            IceDeactivatied?.Invoke(_currentIceObject);
-            _currentIceObject.Disactivate();
+            _currentIceObject.Melted -= ChangeIceAndSpawn;
+            _currentIceObject.Diactivated -= ChangeIce;
         }
         if (_poolIces.TryGetObject(out _currentIceObject))
         {
-            _currentIceObject.BecamePuddle += ChangeIce;
+            _currentIceObject.Melted += ChangeIceAndSpawn;
+            _currentIceObject.Diactivated += ChangeIce;
             _currentIceObject.transform.position = _startPoint.position;
             IceHasChanged?.Invoke(_currentIceObject);
         }
