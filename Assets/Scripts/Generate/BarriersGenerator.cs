@@ -10,7 +10,9 @@ public class BarriersGenerator : MonoBehaviour
     [SerializeField] private Vector3 _positionBetweenSpawn;
     [SerializeField] private float _distanceBetweenBarriers;
     [SerializeField] private Transform _startDistanceSpawn;
-    
+    [SerializeField] private Transform _rightLimitPos;
+    [SerializeField] private Transform _leftLimitPos;
+
     [SerializeField] private Transform _barrierContainer;
     [SerializeField] private Camera _camera;
     
@@ -36,11 +38,9 @@ public class BarriersGenerator : MonoBehaviour
     private void GenerateBarrier(int count, Vector3 point, bool isAlreadyIndented = true)
     {
         _lastBarrierPosition = isAlreadyIndented ? point : point + _positionBetweenSpawn;
-        /*if (IsPlaceTakenByBarrier())
-            return;*/
         for (int i = 0; i < count; i++)
         {
-            int random = new Random().Next(1, 3);
+            int random = new Random().Next(1, 4);
             switch (random)
             {
                 case 1:
@@ -60,12 +60,9 @@ public class BarriersGenerator : MonoBehaviour
     private void SetBarrier(Barrier barrier)
     {
         barrier.gameObject.SetActive(true);
+        int random = new Random().Next((int)_leftLimitPos.position.x*100, (int)_rightLimitPos.position.x*100);
+        _lastBarrierPosition.x=(float)random/100;
         barrier.transform.position = _lastBarrierPosition;
+        barrier.PlayAudio();
     }
-
-    /*private bool IsPlaceTakenByBarrier()
-    {
-        var desk = _deskOnScenes.Find(desk => desk.transform.position.z == _lastBarrierPosition.z);
-        return desk != null && desk.gameObject.activeInHierarchy;
-    }*/
 }

@@ -10010,7 +10010,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &4647747760308939697
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10039,7 +10039,7 @@ MonoBehaviour:
   _speed: 1
   _frictionForce: 0.01
   _minSpeed: 0.5
-  _meltingFactor: 0.001
+  _meltingFactor: 0.0005
   _distanceCheckGround: 0.1
   _particleTraceMelt: {fileID: 4647747761319613781}
   _particleSpray: {fileID: 2184859460760647815}

@@ -20,7 +20,7 @@ public class Ice : MonoBehaviour
     private Vector3 _particleContainerPosition;
     private Rigidbody _rb;
     private BoxCollider _boxCollider;
-    
+
     public event UnityAction Melted;
     public event UnityAction Diactivated;
     
@@ -57,13 +57,15 @@ public class Ice : MonoBehaviour
     
     private void Move(float dir)
     {
+        if (!LocateOnGround())
+            dir = 0;
         Vector3 dirMovement = new Vector3(dir, 0, 1);
         _rb.MovePosition(_rb.position+_speed*dirMovement);
-        PlayParticles();
+        PlayParticlesAudioPlay();
         ReduceFastSpeed();
     }
 
-    private void PlayParticles()
+    private void PlayParticlesAudioPlay()
     {
         if (!LocateOnGround())
             return;
