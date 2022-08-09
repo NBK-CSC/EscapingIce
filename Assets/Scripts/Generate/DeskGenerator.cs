@@ -1,58 +1,25 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class DeskGenerator : MonoBehaviour
+namespace Generate
 {
-    [SerializeField] private int _amountDesk;
-    [SerializeField] private int _startCountDesk;
-    [SerializeField] private Desk _deskPrefab;
-    [SerializeField] private Transform _deskContainer;
-    [SerializeField] private Vector3 _deskLength;
-    [SerializeField] private Transform _startPoint;
-    [SerializeField] private MainController _mainController;
-    
-    private Vector3 _generatePosition;
-    private PoolMono<Desk> _pool;
-    private List<Desk> _deskOnScenes;
-
-    private void OnEnable() => _mainController.FollowingChanged += Reset;
-    private void OnDisable() => _mainController.FollowingChanged += Reset;
-    
-    private void Awake()
+    public class DeskGenerator : SerialGeneratorObjects<Desk>
     {
-        _pool = new PoolMono<Desk>(_amountDesk, _deskPrefab, _deskContainer);
-        _deskOnScenes = new List<Desk>();
-    }
 
-    private void Reset()
-    {
-        GenerateDesk(_startCountDesk,_startPoint.position);
-    }
+        [SerializeField] private Transform _target;
 
-    private void GenerateDesk(int count, Vector3 point,bool isAlreadyIndented=true)
-    {
-        _generatePosition = isAlreadyIndented? point:point+_deskLength;
-        if (IsPlaceTakenByDesk())
-            return;
-        for (int i = 0; i < count; i++)
-            if (_pool.TryGetObject(out var desk))
+        public Transform Target
+        {
+            get => _target;
+            set => _target = value;
+        }
+
+        private void Update()
+        {
+            if (Target.position.z-_activeObjectsOnScene[_activeObjectsOnScene.Count - 1].End.position.z+10>0)
             {
-                SetDesk(desk);
-                _generatePosition += _deskLength;
+                SerialSpawnObjects();
             }
-    }
-
-    private void SetDesk(Desk desk)
-    {
-        desk.gameObject.SetActive(true);
-        desk.transform.position = _generatePosition;
-        desk.GenerateTrigger.CollisionEntered += GenerateDesk;
-        _deskOnScenes.Add(desk);
-    }
-
-    private bool IsPlaceTakenByDesk()
-    {
-        var desk = _deskOnScenes.Find(desk => desk.transform.position == _generatePosition);
-        return desk != null && desk.gameObject.activeInHierarchy;
+        }
     }
 }
