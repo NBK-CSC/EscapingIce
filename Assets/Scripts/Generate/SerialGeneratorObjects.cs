@@ -9,25 +9,28 @@ namespace Generate
         [SerializeField] private int _maxNumberObjectsOnScene;
         [SerializeField] private T startEnvironmentObject;
         
-        protected List<T> _activeObjectsOnScene=new List<T>();
+        protected List<T> _activeObjectsOnScene = new List<T>();
 
         private void Start()
         {
             Init();
             _activeObjectsOnScene.Add(startEnvironmentObject);
         }
+        
+        private void DisablePreviousObject(int numberItemDisable)
+        {
+            _activeObjectsOnScene[numberItemDisable].gameObject.SetActive(false);
+            _activeObjectsOnScene.RemoveAt(numberItemDisable);
+        }
 
-        protected void SerialSpawnObjects()
+        protected void SerialSpawnObjects(int numberItemDisable=1)
         {
             var _endLastSubject = _activeObjectsOnScene[_activeObjectsOnScene.Count - 1].End;
             var newObject = SpawnObject(_endLastSubject.position, _endLastSubject.rotation);
             if (newObject != null)
                 _activeObjectsOnScene.Add(newObject);
             if (_activeObjectsOnScene.Count > _maxNumberObjectsOnScene)
-            {
-                _activeObjectsOnScene[1].gameObject.SetActive(false);
-                _activeObjectsOnScene.RemoveAt(0);
-            }
+                DisablePreviousObject(numberItemDisable);
         }
 
         protected override T SpawnObject(Vector3 position, Quaternion rotation)
@@ -36,14 +39,12 @@ namespace Generate
             newObject.transform.position -= newObject.Begin.localPosition;
             return newObject;
         }
-
+        
         protected void Reset()
         {
-            for (int i=1;i<_activeObjectsOnScene.Count;i++)
-            {
-                _activeObjectsOnScene[i].gameObject.SetActive(false);
-                _activeObjectsOnScene.RemoveAt(i);
-            }
+            int count = _activeObjectsOnScene.Count;
+            for (int i=1;i<count;i++)
+                DisablePreviousObject(1);
         }
     }
 }

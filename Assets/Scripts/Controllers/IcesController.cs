@@ -2,81 +2,67 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class IcesController:MonoBehaviour
+namespace Controllers
 {
-    [SerializeField] private int _amountIce;
-    [SerializeField] private int _maxNumberIce;
-    [SerializeField] private Ice _icePrefab;
-    [SerializeField] private Transform _iceContainer;
-    [SerializeField] private Transform _startPoint;
-    [SerializeField] private Button _button;
-    [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AudioClip _audioBroken;
-    [SerializeField] private Text _label;
-    [SerializeField] private MainController _mainController;
+    public class IcesController : MonoBehaviour
+    {
+        [SerializeField] private int _amountIce;
+        [SerializeField] private int _maxNumberIce;
+        [SerializeField] private Ice _ice;
+        [SerializeField] private Transform _startPoint;
+        [SerializeField] private Button _button;
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private AudioClip _audioBroken;
+        [SerializeField] private Text _label;
+        [SerializeField] private MainController _mainController;
     
-    
-    
-    private int _numberIce;
-    private Ice _currentIceObject;
-    private PoolMono<Ice> _poolIces;
-    
-    public event UnityAction<Ice> IceHasChanged;
-    public event UnityAction<Ice> IceDeactivatied;
+        private int _numberIce;
+        
+        public event UnityAction<Ice> IceAppeared ;
+        public event UnityAction<Ice> IceBroke;
 
-    private void OnEnable()
-    {
-        _button.onClick.AddListener(MakeIceMelt);
-    }
-
-    private void OnDisable()
-    {
-        _button.onClick.RemoveListener(MakeIceMelt);
-    }
-
-    private void Start()
-    {
-        _numberIce = _maxNumberIce;
-        _poolIces = new PoolMono<Ice>(_amountIce, _icePrefab, _iceContainer);
-        ChangeIceAndSpawn();
-        DecreaseNumberIce(0);
-    }
-
-    private void MakeIceMelt()
-    {
-        _currentIceObject.MeltAway();
-    }
-
-    private void ChangeIceAndSpawn()
-    {
-        if (_currentIceObject != null)
-            IceDeactivatied?.Invoke(_currentIceObject);
-        ChangeIce();
-    }
-    
-    private void ChangeIce()
-    {
-        if (_currentIceObject != null)
+        private void OnEnable()
         {
-            DecreaseNumberIce(1);
+            _button.onClick.AddListener(MakeIceBroke);
+            _ice.Broken += AppearIce;
+            _ice.Broken += DecreaseNumberIce;
+        }
+
+        private void OnDisable()
+        {
+            _button.onClick.RemoveListener(MakeIceBroke);
+            _ice.Broken -= AppearIce;
+            _ice.Broken -= DecreaseNumberIce;
+        }
+
+        private void Start()
+        {
+            _numberIce = _maxNumberIce;
+            AppearIce();
+            DecreaseNumberIce();
+        }
+
+        private void MakeIceBroke()
+        {
+            _ice.Broke();
             _audioSource.PlayOneShot(_audioBroken,1f);
-            _currentIceObject.Melted -= ChangeIceAndSpawn;
-            _currentIceObject.Diactivated -= ChangeIce;
+            IceBroke?.Invoke(_ice);
+            DecreaseNumberIce();
         }
-        if (_poolIces.TryGetObject(out _currentIceObject))
+        
+        private void AppearIce()
         {
-            _currentIceObject.Melted += ChangeIceAndSpawn;
-            _currentIceObject.Diactivated += ChangeIce;
-            _currentIceObject.transform.position = _startPoint.position;
-            IceHasChanged?.Invoke(_currentIceObject);
+            _ice.gameObject.SetActive(true);
+            _ice.transform.position = _startPoint.position;
+            IceAppeared?.Invoke(_ice);
         }
-    }
     
-    private void DecreaseNumberIce(int count)
-    {
-        _numberIce -= count;
-        if (_numberIce<=0)
-            _mainController.Reset();
-        _label.text = $"x{_numberIce}";
+        private void DecreaseNumberIce()
+        {
+            _numberIce -= 1;
+            if (_numberIce<=0)
+                _mainController.Reset();
+            _label.text = $"x{_numberIce}";
+        }
     }
 }

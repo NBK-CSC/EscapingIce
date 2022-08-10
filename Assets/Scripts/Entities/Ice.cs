@@ -21,8 +21,9 @@ public class Ice : MonoBehaviour
     private Rigidbody _rb;
     private BoxCollider _boxCollider;
 
-    public event UnityAction Melted;
-    public event UnityAction Diactivated;
+    public event UnityAction BrokenOnSurface;
+    public event UnityAction BrokenIntoWeightlessness;
+    public event UnityAction Broken;
     
     private void Start()
     {
@@ -36,7 +37,7 @@ public class Ice : MonoBehaviour
     private void FixedUpdate()
     {
         if (TryBecomePuddle())
-            MeltAway();
+            Broke();
         else
         {
             Move(Input.GetAxis("Horizontal"));
@@ -57,7 +58,7 @@ public class Ice : MonoBehaviour
     
     private void Move(float dir)
     {
-        if (!LocateOnGround())
+        if (!IsLocateOnGround())
             dir = 0;
         Vector3 dirMovement = new Vector3(dir, 0, 1);
         _rb.MovePosition(_rb.position+_speed*dirMovement);
@@ -67,7 +68,7 @@ public class Ice : MonoBehaviour
 
     private void PlayParticlesAudioPlay()
     {
-        if (!LocateOnGround())
+        if (!IsLocateOnGround())
             return;
         _particleTraceMelt.Play();
         _particleSpray.Play();
@@ -95,10 +96,10 @@ public class Ice : MonoBehaviour
         _boxCollider.size = _sizeBoxCollider;
         _boxCollider.center = _centerBoxCollider;
         _particleContainer.localPosition = _particleContainerPosition;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
-    private bool LocateOnGround()
+    private bool IsLocateOnGround()
     {
         Ray ray1 = new Ray(_rayTransform1.position, -_rayTransform1.up);
         Ray ray2 = new Ray(_rayTransform2.position, -_rayTransform2.up);
@@ -106,22 +107,13 @@ public class Ice : MonoBehaviour
                Physics.Raycast(ray2, out RaycastHit hit2, _distanceCheckGround);
     }
 
-    public void MeltAway()
+    public void Broke()
     {
-        if (LocateOnGround())
-        {
-            Melted?.Invoke();
-            SetDefault();
-        }
+        Broken?.Invoke();
+        if (IsLocateOnGround())
+            BrokenOnSurface?.Invoke();
         else
-        {
-            Diactivate();
-        }
-    }
-    
-    private void Diactivate()
-    {
-        Diactivated?.Invoke();
+            BrokenIntoWeightlessness?.Invoke();
         SetDefault();
     }
 }

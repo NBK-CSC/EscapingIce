@@ -1,36 +1,38 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MainController:MonoBehaviour
+namespace Controllers
 {
-    [SerializeField] private CameraFollower _camera;
-    [SerializeField] private Transform _cameraStartPoint;
-    [SerializeField] private IcesController _icesController;
-    [SerializeField] private GameObject _panelResetMenu;
-
-    public event UnityAction FollowingChanged;
-
-    private void OnEnable()
+    public class MainController:MonoBehaviour
     {
-        _icesController.IceHasChanged += ChangeFollowing;
-    }
+        [SerializeField] private CameraFollower _camera;
+        [SerializeField] private Transform _cameraStartPoint;
+        [SerializeField] private IcesController _icesController;
+        [SerializeField] private GameObject _panelResetMenu;
 
-    private void OnDisable()
-    {
-        _icesController.IceHasChanged -= ChangeFollowing;
-    }
+        public event UnityAction FollowingChanged;
 
-    private void ChangeFollowing(Ice ice)
-    {
-        _camera.transform.position = _cameraStartPoint.position;
-        _camera.TargetTransform = ice.transform;
-        FollowingChanged?.Invoke();
-    }
+        private void OnEnable()
+        {
+            _icesController.IceAppeared += ChangeFollowing;
+        }
 
-    public void Reset()
-    {
-        Time.timeScale = 0f;
-        _panelResetMenu.SetActive(true);
+        private void OnDisable()
+        {
+            _icesController.IceAppeared -= ChangeFollowing;
+        }
+
+        private void ChangeFollowing(Ice ice)
+        {
+            _camera.transform.position = _cameraStartPoint.position;
+            _camera.TargetTransform = ice.transform;
+            FollowingChanged?.Invoke();
+        }
+
+        public void Reset()
+        {
+            Time.timeScale = 0f;
+            _panelResetMenu.SetActive(true);
+        }
     }
 }
