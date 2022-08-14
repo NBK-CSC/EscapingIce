@@ -1,3 +1,6 @@
-using Entries;
+using Entities.AbstractEnvironmentObjects;
 
-public class Desk : SerialEnvironmentObject { }
+namespace Entities
+{
+    public class Desk : SerialEnvironmentObject { }
+}

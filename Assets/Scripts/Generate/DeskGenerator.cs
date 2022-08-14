@@ -1,26 +1,15 @@
-using System;
+using Entities;
+using Generate.AbstractGenerate;
 using UnityEngine;
 
 namespace Generate
 {
-    public class DeskGenerator : SerialGeneratorObjects<Desk>
+    public class DeskGenerator : FollowerSerialGeneratorObjects<Desk>
     {
-        [SerializeField] private Ice _target;
-
-        private void OnEnable()
-        {
-            _target.Broken += Reset;
-        }
-
-        private void OnDisable()
-        {
-            _target.Broken -= Reset;
-        }
-
-        private void Update()
-        {
-            if (_target.transform.position.z-_activeObjectsOnScene[_activeObjectsOnScene.Count - 1].End.position.z+10>0)
-                SerialSpawnObjects();
-        }
+        [SerializeField] private Ice _ice;
+        
+        private void OnEnable() => _ice.Broken += Reset;
+        private void OnDisable()=> _ice.Broken -= Reset;
+        
     }
 }

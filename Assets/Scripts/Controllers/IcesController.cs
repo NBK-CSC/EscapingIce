@@ -47,7 +47,6 @@ namespace Controllers
             _ice.Broke();
             _audioSource.PlayOneShot(_audioBroken,1f);
             IceBroke?.Invoke(_ice);
-            DecreaseNumberIce();
         }
         
         private void AppearIce()
