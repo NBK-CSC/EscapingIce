@@ -17,11 +17,13 @@ namespace Generate.AbstractGenerate
         [SerializeField] private Vector3 _rightPointDirection;
         
         protected List<T> _activeObjectsOnScene = new List<T>();
+        protected static List<Vector3> _occupiedPlaces = new List<Vector3>();
         
         protected override void Start()
         {
             base.Start();
             _activeObjectsOnScene.Add(_startEnvironmentObject);
+            _occupiedPlaces.Add(_startEnvironmentObject.transform.position);
             _rightPointDirection.Normalize();
             _leftPointDirection.Normalize();
         }
@@ -30,7 +32,11 @@ namespace Generate.AbstractGenerate
         {
             var randomDistance = (float)new Random().Next(-(int)_leftLimitDistance*1000,(int)_rightLimitDistance*1000)/1000;
             var spawnPosition = position + Math.Abs(randomDistance) * (randomDistance >= 0 ?_rightPointDirection:_leftPointDirection);
-            _activeObjectsOnScene.Add(SpawnObject(spawnPosition,Quaternion.identity));
+            var newObject = SpawnObject(spawnPosition, Quaternion.identity);
+            var newObjectPosition = newObject.transform.position;
+            newObject.transform.position = new Vector3(newObjectPosition.x, newObjectPosition.y + newObject.OffcetY, newObjectPosition.z);
+            _activeObjectsOnScene.Add(newObject);
+            _occupiedPlaces.Add(newObjectPosition);
         }
     }
 }

@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ee59eac-49cd-4a6f-a34a-acb87c547ebe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/bear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/bear.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ice.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ice.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/IcesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/IcesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Barrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Barrier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Barrier.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Barrier.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Desk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Desk.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/EnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/EnvironmentObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/SerialEnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/SerialEnvironmentObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/SerialEnvironmentObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/SerialEnvironmentObject.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/BarriersGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/BarriersGenerator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/DeskGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/DeskGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/GeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/GeneratorObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/GeneratorObjects.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/GeneratorObjects.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/LocalGeneratorObjects.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/LocalGeneratorObjects.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/SerialGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/SerialGeneratorObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/SerialGeneratorObjects.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/SerialGeneratorObjects.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Reintarnation.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Reintarnation.exe.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/FollowerLocalGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/FollowerLocalGeneratorObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +107,7 @@
       <workItem from="1660417425644" duration="1776000" />
       <workItem from="1660430733398" duration="1408000" />
       <workItem from="1660469882910" duration="1590000" />
-      <workItem from="1660474095085" duration="4641000" />
+      <workItem from="1660474095085" duration="13947000" />
     </task>
     <servers />
   </component>

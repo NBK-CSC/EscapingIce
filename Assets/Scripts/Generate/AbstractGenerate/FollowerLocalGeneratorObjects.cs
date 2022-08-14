@@ -12,9 +12,8 @@ namespace Generate.AbstractGenerate
         
         protected virtual void Update()
         {
-            if ((OrientDirection(_target.position) -
-                 OrientDirection(_activeObjectsOnScene[_activeObjectsOnScene.Count - 1].transform.position)).magnitude >= _spawnDistanceBetweenBarrier)
-                LocalSpawnObjects(_target.position  + GenerateDirection*_spawnDistanceFromTarget);
+            if (_target.position.z - _occupiedPlaces[_occupiedPlaces.Count-1].z >= _spawnDistanceBetweenBarrier)
+                LocalSpawnObjects(OrientDirection(_target.position  + GenerateDirection*_spawnDistanceFromTarget));
         }
     }
 }
