@@ -1,3 +1,5 @@
+using Entities;
+using Followers;
 using UnityEngine;
 using UnityEngine.Events;
 

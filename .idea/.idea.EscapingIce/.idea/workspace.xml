@@ -3,11 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="9ee59eac-49cd-4a6f-a34a-acb87c547ebe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/bear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/bear.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ice.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ice.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/FollowerLocalGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/FollowerLocalGeneratorObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/IcesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/IcesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PuddlesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PuddlesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Ice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Ice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Puddle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Puddle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Followers/CameraFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Followers/CameraFollower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Followers/Follower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Followers/Follower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggers/DeactivationTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Triggers/DeactivationTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggers/DeactivationZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Triggers/DeactivationZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggers/GenerateTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Triggers/GenerateTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +26,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Counters/CounterPoints.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Ice.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/FontSizeChanger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/IceMenuJumping.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
@@ -107,7 +118,8 @@
       <workItem from="1660417425644" duration="1776000" />
       <workItem from="1660430733398" duration="1408000" />
       <workItem from="1660469882910" duration="1590000" />
-      <workItem from="1660474095085" duration="13947000" />
+      <workItem from="1660474095085" duration="14852000" />
+      <workItem from="1660754570545" duration="10644000" />
     </task>
     <servers />
   </component>

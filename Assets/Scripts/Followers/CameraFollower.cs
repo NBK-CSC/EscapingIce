@@ -1,12 +1,14 @@
-using System.Collections;
 using UnityEngine;
 
-public class CameraFollower : Follower
+namespace Followers
 {
-    public Transform TargetTransform
+    public class CameraFollower : Follower
     {
-        get => _targetTransform;
-        set => _targetTransform = value;
+        public Transform TargetTransform
+        {
+            get => _targetTransform;
+            set => _targetTransform = value;
+        }
+        private void FixedUpdate()=>Move(Time.fixedDeltaTime);
     }
-    private void FixedUpdate()=>Move(Time.fixedDeltaTime);
 }

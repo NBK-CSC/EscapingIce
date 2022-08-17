@@ -1,3 +1,4 @@
+using Entities;
 using UnityEngine;
 
 namespace Controllers

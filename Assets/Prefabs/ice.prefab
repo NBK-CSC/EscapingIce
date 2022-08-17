@@ -198,7 +198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3940473788812674662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.432, y: 0.023, z: -0.014}
+  m_LocalPosition: {x: -0.432, y: 0.071, z: -0.014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5802188323641380207}
@@ -5090,7 +5090,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4599004507402970651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.076, y: 0.023, z: -0.014}
+  m_LocalPosition: {x: 0.076, y: 0.071, z: -0.014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5802188323641380207}
@@ -9980,6 +9980,8 @@ GameObject:
   - component: {fileID: 4647747760308939696}
   - component: {fileID: 4647747760308939697}
   - component: {fileID: 4647747760308939698}
+  - component: {fileID: 3536623476604457657}
+  - component: {fileID: 7166733930316874685}
   m_Layer: 0
   m_Name: ice
   m_TagString: Untagged
@@ -10045,16 +10047,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da68771a784a8a4a8359c3cc2444e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
-  _frictionForce: 0.01
-  _minSpeed: 0.5
-  _meltingFactor: 0.0005
   _distanceCheckGround: 0.1
-  _particleTraceMelt: {fileID: 4647747761319613781}
-  _particleSpray: {fileID: 2184859460760647815}
-  _rayTransform1: {fileID: 4516833463638909651}
-  _rayTransform2: {fileID: 1080717274593415387}
-  _particleContainer: {fileID: 5802188323641380207}
+  _checkRightGroundRay: {fileID: 4516833463638909651}
+  _checkLeftGroundRay: {fileID: 1080717274593415387}
+--- !u!114 &3536623476604457657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494800731766402163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baecf3525faa4050b1177efda5007fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 1
+  _frictionFactor: 0.005
+  _minSpeed: 0.5
+--- !u!114 &7166733930316874685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494800731766402163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feeb563021f04b95b671264785ab3fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meltingFactor: 0.01
+  _movableContainer: {fileID: 5802188323641380207}
 --- !u!1 &5657203852731999957
 GameObject:
   m_ObjectHideFlags: 0

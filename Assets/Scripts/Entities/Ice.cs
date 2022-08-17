@@ -1,119 +1,85 @@
+using System;
+using Entities.Сhanging;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Rigidbody),typeof(BoxCollider))]
-public class Ice : MonoBehaviour
+namespace Entities
 {
-    [SerializeField] private float _speed;
-    [SerializeField] private float _frictionForce;
-    [SerializeField] private float _minSpeed;
-    [SerializeField] private float _meltingFactor;
-    [SerializeField] private float _distanceCheckGround;
-    [SerializeField] private ParticleSystem _particleTraceMelt;
-    [SerializeField] private ParticleSystem _particleSpray;
-    [SerializeField] private Transform _rayTransform1;
-    [SerializeField] private Transform _rayTransform2;
-    [SerializeField] private Transform _particleContainer;
-    
-    private Vector3 _sizeBoxCollider;
-    private Vector3 _centerBoxCollider;
-    private Vector3 _particleContainerPosition;
-    private Rigidbody _rb;
-    private BoxCollider _boxCollider;
-
-    public event UnityAction BrokenOnSurface;
-    public event UnityAction BrokenIntoWeightlessness;
-    public event UnityAction Broken;
-    
-    private void Start()
+    [RequireComponent(typeof(Mover),typeof(Melter))]
+    public class Ice : MonoBehaviour
     {
-        _rb = transform.GetComponent<Rigidbody>();
-        _boxCollider = transform.GetComponent<BoxCollider>();
-        _sizeBoxCollider = _boxCollider.size;
-        _centerBoxCollider = _boxCollider.center;
-        _particleContainerPosition = _particleContainer.localPosition;
-    }
-    
-    private void FixedUpdate()
-    {
-        if (TryBecomePuddle())
-            Broke();
-        else
-        {
-            Move(Input.GetAxis("Horizontal"));
-            Melt();
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.TryGetComponent<Puddle>(out var puddle))
-            _speed = puddle.Acceleration;
-    }
-    
-    private bool TryBecomePuddle()
-    {
-        return _boxCollider.size.y <= 0f;
-    }
-    
-    private void Move(float dir)
-    {
-        if (!IsLocateOnGround())
-            dir = 0;
-        Vector3 dirMovement = new Vector3(dir, 0, 1);
-        _rb.MovePosition(_rb.position+_speed*dirMovement);
-        PlayParticlesAudioPlay();
-        ReduceFastSpeed();
-    }
-
-    private void PlayParticlesAudioPlay()
-    {
-        if (!IsLocateOnGround())
-            return;
-        _particleTraceMelt.Play();
-        _particleSpray.Play();
-    }
-
-    private void ReduceFastSpeed()
-    {
-        if (_speed > _minSpeed)
-            _speed -= _frictionForce;
-    }
-    
-    private void Melt()
-    {
-        var boxColliderCenter = _boxCollider.center;
-        var boxColliderSize = _boxCollider.size;
-        var particleContainerPosition = _particleContainer.position;
+        [SerializeField] private float _distanceCheckGround;
         
-        _boxCollider.size = new Vector3(boxColliderSize.x, boxColliderSize.y - _meltingFactor, boxColliderSize.z);
-        _boxCollider.center = new Vector3(boxColliderCenter.x, boxColliderCenter.y + _meltingFactor/2, boxColliderCenter.z);
-        _particleContainer.position=new Vector3(particleContainerPosition.x, particleContainerPosition.y + _meltingFactor, particleContainerPosition.z);
-    }
-    
-    private void SetDefault()
-    {
-        _boxCollider.size = _sizeBoxCollider;
-        _boxCollider.center = _centerBoxCollider;
-        _particleContainer.localPosition = _particleContainerPosition;
-        //gameObject.SetActive(false);
-    }
+        [SerializeField] private Transform _checkRightGroundRay;
+        [SerializeField] private Transform _checkLeftGroundRay;
 
-    private bool IsLocateOnGround()
-    {
-        Ray ray1 = new Ray(_rayTransform1.position, -_rayTransform1.up);
-        Ray ray2 = new Ray(_rayTransform2.position, -_rayTransform2.up);
-        return Physics.Raycast(ray1, out RaycastHit hit1, _distanceCheckGround) ||
-               Physics.Raycast(ray2, out RaycastHit hit2, _distanceCheckGround);
-    }
+        private IceInput _iceInput;
+        private Mover _mover;
+        private BoxCollider _boxCollider;
+        private bool _onSurfaceState;
 
-    public void Broke()
-    {
-        Broken?.Invoke();
-        if (IsLocateOnGround())
-            BrokenOnSurface?.Invoke();
-        else
-            BrokenIntoWeightlessness?.Invoke();
-        SetDefault();
+        public event UnityAction OnBoardFell;
+        public event UnityAction OnBoardFellOff;
+        public event UnityAction Broken;
+
+        private void Awake()
+        {
+            _mover = GetComponent<Mover>();
+            _boxCollider = GetComponent<BoxCollider>();
+            
+            _iceInput = new IceInput();
+        }
+
+        private void OnEnable()
+        {
+            _iceInput.Enable();
+        }
+
+        private void OnDisable()
+        {
+            _iceInput.Disable();
+        }
+
+        private void Start()
+        {
+            _onSurfaceState = false;
+        }
+
+        private void FixedUpdate()
+        {
+            if (IsLocateOnGround()!=_onSurfaceState)
+                NotifySurfaceChanges();
+            if (TryBecomePuddle())
+                Broke();
+            var valueAxisX = _iceInput.Ice.Move.ReadValue<float>();
+            _mover.Move(new Vector3(valueAxisX, 0, 1));
+        }
+
+        private void NotifySurfaceChanges()
+        {
+            _onSurfaceState =!_onSurfaceState;
+            if (_onSurfaceState)
+                OnBoardFell?.Invoke();
+            else
+                OnBoardFellOff?.Invoke();
+        }
+        
+        private bool TryBecomePuddle()
+        {
+            return _boxCollider.size.y <= 0f;
+        }
+        
+        private bool IsLocateOnGround()
+        {
+            Ray rayRight = new Ray(_checkRightGroundRay.position, -_checkRightGroundRay.up);
+            Ray rayLeft = new Ray(_checkLeftGroundRay.position, -_checkLeftGroundRay.up);
+            return Physics.Raycast(rayRight, out RaycastHit hit1, _distanceCheckGround) ||
+                   Physics.Raycast(rayLeft, out RaycastHit hit2, _distanceCheckGround);
+        }
+
+        public void Broke()
+        {
+            Broken?.Invoke();
+        }
     }
 }
