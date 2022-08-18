@@ -6,11 +6,10 @@ namespace UI
     public class PauseMenu : MonoBehaviour
     {
         [SerializeField] private GameObject _panelPauseMenu;
-
+        
         public void Reset()
         {
-            SceneManager.LoadScene(1);
-            Time.timeScale = 1f;
+            SceneSwitcher.SwitchToGameScene();
         }
     
         public void Pause()
@@ -27,7 +26,7 @@ namespace UI
 
         public void Exit()
         {
-            SceneManager.LoadScene(0);
+            SceneSwitcher.SwitchToMenuScene();
         }
     }
 }

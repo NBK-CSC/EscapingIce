@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 380513005}
   - component: {fileID: 380513004}
   m_Layer: 0
-  m_Name: IcesContoller
+  m_Name: IceContoller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1207,8 +1207,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 685366036}
+  - component: {fileID: 685366037}
   m_Layer: 0
-  m_Name: IceController
+  m_Name: CameraController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1228,6 +1229,21 @@ Transform:
   m_Father: {fileID: 1583540994}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &685366037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685366035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35530b702d04cb483aab5fe49a4920f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 1955528172}
+  _cameraStartPoint: {fileID: 759238433}
+  _ice: {fileID: 1339135699}
 --- !u!1 &759238432
 GameObject:
   m_ObjectHideFlags: 0

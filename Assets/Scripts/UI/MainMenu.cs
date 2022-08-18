@@ -1,17 +1,34 @@
+using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private GameObject _panelOptionsMenu;
-
-    public void LoadPlayScene()
+    public class MainMenu : MonoBehaviour
     {
-        SceneManager.LoadScene(1);
-    }
+        [SerializeField] private Button _playButton;
+        [SerializeField] private Button _exitButton;
 
-    public void Exit()
-    {
-        Application.Quit();
+        private void OnEnable()
+        {
+            _playButton.onClick.AddListener(PlayGame);
+            _exitButton.onClick.AddListener(Exit);
+        }
+
+        private void OnDisable()
+        {
+            _playButton.onClick.RemoveListener(PlayGame);
+            _exitButton.onClick.RemoveListener(Exit);
+        }
+
+        private void PlayGame()
+        {
+            SceneSwitcher.SwitchToGameScene();
+        }
+
+        private void Exit()
+        {
+            Application.Quit();
+        }
     }
 }

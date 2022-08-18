@@ -11,15 +11,15 @@ namespace Controllers
         
         private void OnEnable()
         {
-            _ice.Broken += SetIcePositionDefault;
+            _ice.Broken += SetIcePositionInDefault;
         }
 
         private void OnDisable()
         {
-            _ice.Broken -= SetIcePositionDefault;
+            _ice.Broken -= SetIcePositionInDefault;
         }
         
-        private void SetIcePositionDefault()
+        private void SetIcePositionInDefault()
         {
             _camera.transform.position = _cameraStartPoint.position;
         }

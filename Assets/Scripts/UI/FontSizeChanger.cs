@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FontSizeChanger : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private Text _label;
-    [SerializeField] private float _ratio;
-
-    private void Start()
+    public class FontSizeChanger : MonoBehaviour
     {
-        _label.fontSize =(int)(Screen.height / _ratio);
+        [SerializeField] private Text _label;
+        [SerializeField] private float _ratio;
+
+        private void Start()
+        {
+            _label.fontSize =(int)(Screen.height / _ratio);
+        }
     }
 }
