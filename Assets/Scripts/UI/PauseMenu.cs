@@ -1,30 +1,33 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private GameObject _panelPauseMenu;
-
-    public void Reset()
+    public class PauseMenu : MonoBehaviour
     {
-        SceneManager.LoadScene(1);
-        Time.timeScale = 1f;
-    }
+        [SerializeField] private GameObject _panelPauseMenu;
+
+        public void Reset()
+        {
+            SceneManager.LoadScene(1);
+            Time.timeScale = 1f;
+        }
     
-    public void Pause()
-    {
-        _panelPauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-    }
+        public void Pause()
+        {
+            _panelPauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
 
-    public void Resume()
-    {
-        _panelPauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-    }
+        public void Resume()
+        {
+            _panelPauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+        }
 
-    public void Exit()
-    {
-        SceneManager.LoadScene(0);
+        public void Exit()
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

@@ -8,8 +8,8 @@ namespace Controllers
         [SerializeField] private int _amountPuddle;
         [SerializeField] private Puddle _puddlePrefab;
         [SerializeField] private Transform _puddleContainer;
-        [SerializeField] private IcesController _icesController;
-        [SerializeField] private float _offcetY=4.1f;
+        [SerializeField] private Ice _ice;
+        [SerializeField] private float _offcetY;
         
         private PoolMono<Puddle> _poolPuddles;
 
@@ -18,15 +18,15 @@ namespace Controllers
             _poolPuddles = new PoolMono<Puddle>(_amountPuddle, _puddlePrefab, _puddleContainer);
         }
 
-        private void OnEnable() => _icesController.IceBroke += SpawnPuddle;
-        private void OnDisable() => _icesController.IceBroke -= SpawnPuddle;
+        private void OnEnable() => _ice.Broken += SpawnPuddle;
+        private void OnDisable() => _ice.Broken -= SpawnPuddle;
 
-        private void SpawnPuddle(Ice ice)
+        private void SpawnPuddle()
         {
             if (_poolPuddles.TryGetObject(out var puddle))
             {
-                var icePosition = ice.transform.position;
-                puddle.transform.position = new Vector3(icePosition.x, _offcetY, icePosition.z);
+                var icePosition = _ice.transform.position;
+                puddle.transform.position = new Vector3(icePosition.x, icePosition.y+_offcetY, icePosition.z);
             }
         }   
     }

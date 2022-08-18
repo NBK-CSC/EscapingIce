@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &40417152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 40417153}
+  - component: {fileID: 40417154}
+  m_Layer: 0
+  m_Name: UIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &40417153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40417152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1583540994}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &40417154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40417152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686181de248b4780b4704985d69cc63e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _label: {fileID: 1108268223}
+  _pauseMenu: {fileID: 436226575}
+  _dieButton: {fileID: 1371346067}
+  _ice: {fileID: 1339135699}
 --- !u!1 &66368552
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,13 +696,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 275700225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f90ea9df1a6f48069252d7283f23cc97, type: 3}
+  m_Script: {fileID: 11500000, guid: d0d7d54507944f15866c56ecba26856e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 1955528173}
-  _cameraStartPoint: {fileID: 759238433}
-  _icesController: {fileID: 380513004}
-  _panelResetMenu: {fileID: 0}
+  _maxNumberIce: 10
+  _ice: {fileID: 1339135699}
+  _UIController: {fileID: 40417154}
 --- !u!1 &280224975
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +742,6 @@ GameObject:
   m_Component:
   - component: {fileID: 380513005}
   - component: {fileID: 380513004}
-  - component: {fileID: 380513006}
   m_Layer: 0
   m_Name: IcesContoller
   m_TagString: Untagged
@@ -713,18 +758,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 380513003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d7d54507944f15866c56ecba26856e, type: 3}
+  m_Script: {fileID: 11500000, guid: ca850f2250ce42e1b7fa493e02c907f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amountIce: 2
-  _maxNumberIce: 10
   _ice: {fileID: 1339135699}
   _startPoint: {fileID: 1621720854}
-  _button: {fileID: 1371346067}
-  _audioSource: {fileID: 380513006}
-  _audioBroken: {fileID: 8300000, guid: 9924321c03d6f85498a0ac350a747de8, type: 3}
-  _label: {fileID: 1108268223}
-  _mainController: {fileID: 275700227}
 --- !u!4 &380513005
 Transform:
   m_ObjectHideFlags: 0
@@ -739,102 +777,6 @@ Transform:
   m_Father: {fileID: 1583540994}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &380513006
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380513003}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &436226570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1175,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 380513006}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: set_volume
         m_Mode: 0
@@ -1256,6 +1198,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3ee96f1836409e88d8c05461cfd17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &685366035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 685366036}
+  m_Layer: 0
+  m_Name: IceController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &685366036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685366035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1583540994}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &759238432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,7 +1789,7 @@ GameObject:
   - component: {fileID: 1173643533}
   - component: {fileID: 1173643532}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2186,7 +2158,7 @@ GameObject:
   - component: {fileID: 1371346068}
   - component: {fileID: 1371346067}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DieButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2395,6 +2367,8 @@ Transform:
   - {fileID: 275700226}
   - {fileID: 380513005}
   - {fileID: 1807541976}
+  - {fileID: 40417153}
+  - {fileID: 685366036}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2606,7 +2580,7 @@ MonoBehaviour:
   _amountPuddle: 10
   _puddlePrefab: {fileID: -4946876283268155327, guid: 00eda5ba0f6c3ab438e294792654eae0, type: 3}
   _puddleContainer: {fileID: 2046102779}
-  _icesController: {fileID: 380513004}
+  _ice: {fileID: 1339135699}
   _offcetY: -3.01
 --- !u!1 &1832897463
 GameObject:
@@ -2660,7 +2634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4647747760308939698, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
       propertyPath: _distanceCheckGround
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5119084846501492425, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
       propertyPath: m_RootOrder
@@ -2712,7 +2686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7166733930316874685, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
       propertyPath: _meltingFactor
-      value: 0.05
+      value: 0.0005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
@@ -3050,7 +3024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _smoothing: 2
-  _targetTransform: {fileID: 0}
+  _targetTransform: {fileID: 1066398572}
   _offset: {x: 0, y: 4, z: 8}
 --- !u!1 &2046102778
 GameObject:

@@ -1,40 +1,38 @@
 using Entities;
-using Followers;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Controllers
 {
-    public class MainController:MonoBehaviour
+    public class MainController : MonoBehaviour
     {
-        [SerializeField] private CameraFollower _camera;
-        [SerializeField] private Transform _cameraStartPoint;
-        [SerializeField] private IcesController _icesController;
-        [SerializeField] private GameObject _panelResetMenu;
+        [SerializeField] private int _maxNumberIce;
+        [SerializeField] private Ice _ice;
+        [SerializeField] private UIController _UIController;
 
-        public event UnityAction FollowingChanged;
-
+        private int _numberIce;
+        
         private void OnEnable()
         {
-            _icesController.IceAppeared += ChangeFollowing;
+            _ice.Broken += DecreaseNumberIce;
         }
 
         private void OnDisable()
         {
-            _icesController.IceAppeared -= ChangeFollowing;
+            _ice.Broken -= DecreaseNumberIce;
         }
-
-        private void ChangeFollowing(Ice ice)
+        
+        private void Start()
         {
-            _camera.transform.position = _cameraStartPoint.position;
-            _camera.TargetTransform = ice.transform;
-            FollowingChanged?.Invoke();
+            _numberIce = _maxNumberIce;
+            _UIController.PrintNumberOfAttempts(_numberIce);
         }
-
-        public void Reset()
+        
+        private void DecreaseNumberIce()
         {
-            Time.timeScale = 0f;
-            _panelResetMenu.SetActive(true);
+            _numberIce -= 1;
+            if (_numberIce <= 0)
+                _UIController.GameOver();
+            _UIController.PrintNumberOfAttempts(_numberIce);
         }
     }
 }
