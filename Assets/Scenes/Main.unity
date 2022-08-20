@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 40417153}
   - component: {fileID: 40417154}
   m_Layer: 0
-  m_Name: UIController
+  m_Name: UIView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   _label: {fileID: 1108268223}
   _pauseMenu: {fileID: 436226575}
   _dieButton: {fileID: 1371346067}
-  _ice: {fileID: 1339135699}
+  _breakController: {fileID: 897079875}
 --- !u!1 &66368552
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxNumberIce: 10
   _ice: {fileID: 1339135699}
-  _UIController: {fileID: 40417154}
+  uiView: {fileID: 40417154}
 --- !u!1 &280224975
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 380513005}
   - component: {fileID: 380513004}
   m_Layer: 0
-  m_Name: IceContoller
+  m_Name: IceController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -761,8 +761,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca850f2250ce42e1b7fa493e02c907f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ice: {fileID: 1339135699}
+  _timeDelayBreak: 1
   _startPoint: {fileID: 1621720854}
+  _ice: {fileID: 1339135699}
 --- !u!4 &380513005
 Transform:
   m_ObjectHideFlags: 0
@@ -1243,7 +1244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 1955528172}
   _cameraStartPoint: {fileID: 759238433}
-  _ice: {fileID: 1339135699}
+  _iceController: {fileID: 380513004}
 --- !u!1 &759238432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1369,7 @@ MonoBehaviour:
   _startEnvironmentObject: {fileID: 680323634}
   _spawnDistanceFromTarget: 40
   _target: {fileID: 1066398572}
-  _ice: {fileID: 1339135699}
+  _iceController: {fileID: 380513004}
 --- !u!4 &797560887
 Transform:
   m_ObjectHideFlags: 0
@@ -1458,6 +1459,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803593859}
   m_CullTransparentMesh: 1
+--- !u!1 &897079873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 897079874}
+  - component: {fileID: 897079875}
+  m_Layer: 0
+  m_Name: BreakController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &897079874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897079873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1583540994}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &897079875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897079873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f50be45d48401ab8229fc47b8bdab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ice: {fileID: 1339135699}
 --- !u!1 &927019310
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,6 +2430,7 @@ Transform:
   - {fileID: 1807541976}
   - {fileID: 40417153}
   - {fileID: 685366036}
+  - {fileID: 897079874}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2561,7 +2607,7 @@ GameObject:
   - component: {fileID: 1807541976}
   - component: {fileID: 1807541977}
   m_Layer: 0
-  m_Name: PuddlesContoller
+  m_Name: PuddlesController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2596,8 +2642,8 @@ MonoBehaviour:
   _amountPuddle: 10
   _puddlePrefab: {fileID: -4946876283268155327, guid: 00eda5ba0f6c3ab438e294792654eae0, type: 3}
   _puddleContainer: {fileID: 2046102779}
-  _ice: {fileID: 1339135699}
-  _offcetY: -3.01
+  _iceController: {fileID: 380513004}
+  _offcetY: 1
 --- !u!1 &1832897463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,6 +2697,10 @@ PrefabInstance:
     - target: {fileID: 4647747760308939698, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
       propertyPath: _distanceCheckGround
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647747760308939698, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
+      propertyPath: _lateralMotionReductionFactor
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5119084846501492425, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
       propertyPath: m_RootOrder
@@ -3039,9 +3089,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26280e91ab4b41c1956c743849398640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _smoothing: 2
+  _smoothing: 5
   _targetTransform: {fileID: 1066398572}
-  _offset: {x: 0, y: 4, z: 8}
+  _offset: {x: 0, y: 4, z: -5}
 --- !u!1 &2046102778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,8 +3183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00231c8caec2472b8e566116f6f52937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offcetY: 0
-  _audioSource: {fileID: 0}
+  offsetY: 0
 --- !u!114 &1269279392800236910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3147,8 +3196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f1e73412154c0a91b182ca079d8232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offcetY: 0
-  _audioSource: {fileID: 0}
+  offsetY: 0
 --- !u!114 &1321819191287791261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3161,8 +3209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0362150942ca46f3ae14440d7f684ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offcetY: 0
-  _audioSource: {fileID: 0}
+  offsetY: 0
 --- !u!4 &1933929140665499606
 Transform:
   m_ObjectHideFlags: 0

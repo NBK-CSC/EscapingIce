@@ -34,7 +34,7 @@ namespace Generate.AbstractGenerate
             var spawnPosition = position + Math.Abs(randomDistance) * (randomDistance >= 0 ?_rightPointDirection:_leftPointDirection);
             var newObject = SpawnObject(spawnPosition, Quaternion.identity);
             var newObjectPosition = newObject.transform.position;
-            newObject.transform.position = new Vector3(newObjectPosition.x, newObjectPosition.y + newObject.OffcetY, newObjectPosition.z);
+            newObject.transform.position = new Vector3(newObjectPosition.x, newObjectPosition.y + newObject.OffsetY, newObjectPosition.z);
             _activeObjectsOnScene.Add(newObject);
             _occupiedPlaces.Add(newObjectPosition);
         }

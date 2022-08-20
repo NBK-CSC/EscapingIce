@@ -5,8 +5,8 @@ namespace Entities.AbstractEnvironmentObjects
 {
     public abstract class EnvironmentObject : MonoBehaviour
     {
-        [SerializeField] private float _offcetY;
+        [SerializeField] private float offsetY;
 
-        public float OffcetY => _offcetY;
+        public float OffsetY => offsetY;
     }
 }

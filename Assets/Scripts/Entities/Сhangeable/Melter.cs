@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Entities.Сhanging
+namespace Entities.Сhangeable
 {
     [RequireComponent(typeof(BoxCollider))]
     public class Melter:MonoBehaviour
@@ -26,21 +26,19 @@ namespace Entities.Сhanging
         {
             _ice.OnBoardFell += GivePermissionMelt;
             _ice.OnBoardFellOff += SetDefault;
-            _ice.Broken += SetDefault;
         }
 
         private void OnDisable()
         {
             _ice.OnBoardFell -= GivePermissionMelt;
             _ice.OnBoardFellOff -= SetDefault;
-            _ice.Broken -= SetDefault;
         }
         
         private void Start()
         {
             _sizeBoxCollider = _boxCollider.size;
             _centerBoxCollider = _boxCollider.center;
-            _movableContainerPosition = _movableContainer.position;
+            _movableContainerPosition = _movableContainer.localPosition;
         }
         
         private void FixedUpdate()
@@ -59,7 +57,7 @@ namespace Entities.Сhanging
             _canMelt = false;
             _boxCollider.size = _sizeBoxCollider;
             _boxCollider.center = _centerBoxCollider;
-            _movableContainer.position = _movableContainerPosition;
+            _movableContainer.localPosition = _movableContainerPosition;
         }
         
         private void Melt()

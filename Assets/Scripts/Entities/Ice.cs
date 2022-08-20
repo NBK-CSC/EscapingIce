@@ -1,5 +1,6 @@
-using System;
-using Entities.Сhanging;
+using Entities.BarrierObjects;
+using Entities.BorderObjects;
+using Entities.Сhangeable;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,7 @@ namespace Entities
     public class Ice : MonoBehaviour
     {
         [SerializeField] private float _distanceCheckGround;
+        [SerializeField] private float _lateralMotionReductionFactor;
         
         [SerializeField] private Transform _checkRightGroundRay;
         [SerializeField] private Transform _checkLeftGroundRay;
@@ -16,7 +18,9 @@ namespace Entities
         private IceInput _iceInput;
         private Mover _mover;
         private BoxCollider _boxCollider;
-        private bool _onSurfaceState;
+        private bool _isOnSurface;
+
+        public bool IsOnSurface => _isOnSurface;
 
         public event UnityAction OnBoardFell;
         public event UnityAction OnBoardFellOff;
@@ -42,23 +46,23 @@ namespace Entities
 
         private void Start()
         {
-            _onSurfaceState = false;
+            _isOnSurface = false;
         }
 
         private void FixedUpdate()
         {
-            if (IsLocateOnGround()!=_onSurfaceState)
+            if (IsLocateOnGround()!=_isOnSurface)
                 NotifySurfaceChanges();
             if (TryBecomePuddle())
-                Broke();
-            var valueAxisX = _iceInput.Ice.Move.ReadValue<float>();
-            _mover.Move(new Vector3(valueAxisX, 0, 1));
+                Break();
+            var valueAxisX = _isOnSurface?_iceInput.Ice.Move.ReadValue<float>():0f;
+            _mover.Move(new Vector3(valueAxisX*_lateralMotionReductionFactor, 0, 1));
         }
 
         private void NotifySurfaceChanges()
         {
-            _onSurfaceState =!_onSurfaceState;
-            if (_onSurfaceState)
+            _isOnSurface =! _isOnSurface;
+            if (_isOnSurface)
                 OnBoardFell?.Invoke();
             else
                 OnBoardFellOff?.Invoke();
@@ -77,7 +81,7 @@ namespace Entities
                    Physics.Raycast(rayLeft, out RaycastHit hit2, _distanceCheckGround);
         }
 
-        public void Broke()
+        public void Break()
         {
             Broken?.Invoke();
         }

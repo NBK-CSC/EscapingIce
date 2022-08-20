@@ -1,5 +1,6 @@
 using Entities;
 using UnityEngine;
+using Views;
 
 namespace Controllers
 {
@@ -7,7 +8,7 @@ namespace Controllers
     {
         [SerializeField] private int _maxNumberIce;
         [SerializeField] private Ice _ice;
-        [SerializeField] private UIController _UIController;
+        [SerializeField] private UIGameView uiGameView;
 
         private int _numberIce;
         
@@ -24,15 +25,15 @@ namespace Controllers
         private void Start()
         {
             _numberIce = _maxNumberIce;
-            _UIController.PrintNumberOfAttempts(_numberIce);
+            uiGameView.PrintNumberOfAttempts(_numberIce);
         }
         
         private void DecreaseNumberIce()
         {
             _numberIce -= 1;
             if (_numberIce <= 0)
-                _UIController.GameOver();
-            _UIController.PrintNumberOfAttempts(_numberIce);
+                uiGameView.GameOver();
+            uiGameView.PrintNumberOfAttempts(_numberIce);
         }
     }
 }

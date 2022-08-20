@@ -1,4 +1,3 @@
-using Entities;
 using UnityEngine;
 
 namespace Controllers
@@ -7,16 +6,16 @@ namespace Controllers
     {
         [SerializeField] private Camera _camera;
         [SerializeField] private Transform _cameraStartPoint;
-        [SerializeField] private Ice _ice;
+        [SerializeField] private IceController _iceController;
         
         private void OnEnable()
         {
-            _ice.Broken += SetIcePositionInDefault;
+            _iceController.IceBroken += SetIcePositionInDefault;
         }
 
         private void OnDisable()
         {
-            _ice.Broken -= SetIcePositionInDefault;
+            _iceController.IceBroken -= SetIcePositionInDefault;
         }
         
         private void SetIcePositionInDefault()

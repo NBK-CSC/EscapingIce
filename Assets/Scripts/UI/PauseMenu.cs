@@ -1,12 +1,16 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace UI
 {
-    public class PauseMenu : MonoBehaviour
+    public class PauseMenu
     {
-        [SerializeField] private GameObject _panelPauseMenu;
-        
+        private GameObject _panelPauseMenu;
+
+        public PauseMenu(GameObject panelPauseMenu)
+        {
+            _panelPauseMenu = panelPauseMenu;
+        }
+
         public void Reset()
         {
             SceneSwitcher.SwitchToGameScene();
