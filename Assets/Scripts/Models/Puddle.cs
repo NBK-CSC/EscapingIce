@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Entities
+namespace Models
 {
     public class Puddle : MonoBehaviour
     {

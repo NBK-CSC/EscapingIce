@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Entities.Сhangeable
+namespace Models.Сhangeable
 {
     [RequireComponent(typeof(Rigidbody))]
     public class Mover: MonoBehaviour

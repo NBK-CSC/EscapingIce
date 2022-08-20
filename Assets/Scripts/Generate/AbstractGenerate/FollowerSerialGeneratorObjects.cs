@@ -1,4 +1,4 @@
-using Entities.AbstractEnvironmentObjects;
+using Models.AbstractEnvironmentObjects;
 using UnityEngine;
 
 namespace Generate.AbstractGenerate

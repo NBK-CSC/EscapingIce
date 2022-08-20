@@ -2,37 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ee59eac-49cd-4a6f-a34a-acb87c547ebe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects/Border.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Desk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Desk.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/bear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/bear.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/fork.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/fork.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/glass.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/glass.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BreakController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BreakController.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/IceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/IceController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PuddlesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PuddlesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIGameView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIGameView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Barrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Barrier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Ice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Ice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhanging.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhanging/Melter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Melter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhanging/Melter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Melter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhanging/Mover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Mover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhanging/Mover.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Mover.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/DeskGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/DeskGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggers/DeactivationTrigger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggers/DeactivationTrigger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggers/DeactivationZone.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggers/DeactivationZone.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects/Border.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggers/GenerateTrigger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Triggers/GenerateTrigger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PauseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PuddlesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/PuddlesSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PuddlesController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/PuddlesSpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Counters/CounterPoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Counters/CounterPoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/EnvironmentObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/EnvironmentObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/LocalEnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/LocalEnvironmentObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/LocalEnvironmentObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/LocalEnvironmentObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/SerialEnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/SerialEnvironmentObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/SerialEnvironmentObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/SerialEnvironmentObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Barrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Barrier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Barrier.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Barrier.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Beer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Beer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Beer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Beer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Fork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Fork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Fork.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Fork.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Glass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Glass.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Glass.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Glass.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/IBarrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/IBarrier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/IBarrier.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/IBarrier.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects/Border.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/Border.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects/Border.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/Border.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects/IBorder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/IBorder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects/IBorder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/IBorder.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Desk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Desk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Desk.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Desk.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Ice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Ice.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Puddle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Puddle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Puddle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Puddle.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Сhangeable.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Melter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Сhangeable/Melter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Melter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Сhangeable/Melter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Mover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Сhangeable/Mover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Mover.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Сhangeable/Mover.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PauseMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PauseMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/UIGameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIGameView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +57,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0ee480759f3d481d82ada245dc74f9fd13be00/ff/970d8d57/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Counters/CounterPoints.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Ice.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/FontSizeChanger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

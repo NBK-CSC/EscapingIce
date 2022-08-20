@@ -1,14 +1,17 @@
 using Entities;
+using Models;
+using ObjectPool;
+using Presenters;
 using UnityEngine;
 
-namespace Controllers
+namespace Generate
 {
-    public class PuddlesController:MonoBehaviour
+    public class PuddlesSpawner:MonoBehaviour
     {
         [SerializeField] private int _amountPuddle;
         [SerializeField] private Puddle _puddlePrefab;
         [SerializeField] private Transform _puddleContainer;
-        [SerializeField] private IceController _iceController;
+        [SerializeField] private IcePresenter icePresenter;
         [SerializeField] private float _offcetY;
         
         private PoolMono<Puddle> _poolPuddles;
@@ -20,11 +23,11 @@ namespace Controllers
 
         private void OnEnable()
         {
-            _iceController.OnSurfaceIceBroken += SpawnPuddle;
+            icePresenter.OnSurfaceIceBroken += SpawnPuddle;
         } 
         private void OnDisable()
         {
-            _iceController.OnSurfaceIceBroken += SpawnPuddle;
+            icePresenter.OnSurfaceIceBroken += SpawnPuddle;
         } 
 
         private void SpawnPuddle(Vector3 position)

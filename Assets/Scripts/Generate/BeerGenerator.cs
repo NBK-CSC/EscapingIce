@@ -1,5 +1,5 @@
-using Entities.BarrierObjects;
 using Generate.AbstractGenerate;
+using Models.BarrierObjects;
 using UnityEngine;
 
 namespace Generate

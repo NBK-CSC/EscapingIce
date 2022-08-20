@@ -1,4 +1,4 @@
-namespace Entities.BorderObjects
+namespace Models.BorderObjects
 {
     public interface IBorder
     {

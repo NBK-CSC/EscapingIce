@@ -1,4 +1,4 @@
-namespace Entities.BarrierObjects
+namespace Models.BarrierObjects
 {
     public class Fork:Barrier { }
 }

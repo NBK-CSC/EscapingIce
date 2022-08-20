@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Entities.AbstractEnvironmentObjects
+namespace Models.AbstractEnvironmentObjects
 {
     public abstract class SerialEnvironmentObject : EnvironmentObject
     {

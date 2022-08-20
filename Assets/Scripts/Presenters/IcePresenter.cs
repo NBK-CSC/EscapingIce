@@ -1,27 +1,38 @@
 using System.Collections;
 using Entities;
+using Models;
 using UnityEngine;
 using UnityEngine.Events;
+using Views;
 
-namespace Controllers
+namespace Presenters
 {
-    public class IceController : MonoBehaviour
+    public class IcePresenter : MonoBehaviour
     {
         [SerializeField] private float _timeDelayBreak;
         [SerializeField] private Transform _startPoint;
         [SerializeField] private Ice _ice;
+
+        private IView _view;
         
         public event UnityAction IceBroken;
         public event UnityAction<Vector3> OnSurfaceIceBroken;
 
-        private void OnEnable()
+        public void Init(IView view)
         {
-            _ice.Broken += AppearIce;
+            _view = view;
         }
 
-        private void OnDisable()
+        public void Enable()
+        {
+            _ice.Broken += AppearIce;
+            _view.Broken += AppearIce;
+        }
+
+        public void Disable()
         {
             _ice.Broken -= AppearIce;
+            _view.Broken -= AppearIce;
         }
 
         private IEnumerator DelayBroke()

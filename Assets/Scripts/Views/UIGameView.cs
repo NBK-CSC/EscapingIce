@@ -1,48 +1,78 @@
 using System;
-using Controllers;
-using UI;
+using Entities;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Views
 {
-    public class UIGameView : MonoBehaviour
+    public class UIGameView : MonoBehaviour, IView
     {
-        [SerializeField] private Text _labelNumberAttempts;
-        [SerializeField] private GameObject _panelPauseMenu;
-        [SerializeField] private Button _dieButton;
-        [SerializeField] private BreakController _breakController;
+        [Header("1 layer UI")]
+        [SerializeField] private Button _breakButton;
+        [SerializeField] private Button _pauseButton;
 
-        private PauseMenu _pauseMenu;
+        [Header("2 layer UI")]
+        [SerializeField] private Button _resumeButton;
+        [SerializeField] private Button _settingsButton;
+        [SerializeField] private Button _exitSceneButton;
+        [Header("3 layer UI")]
+        [SerializeField] private Button _exitSettingsButton;
+        
+        public event Action Broken;
+        public event Action Paused;
+        public event Action Resumed;
+        public event Action SettingsOpened;
+        public event Action OfSettingsGetOut;
+        public event Action OfSceneGetOut;
         
         private void OnEnable()
         {
-            _dieButton.onClick.AddListener(MakeBreak);
+            _breakButton.onClick.AddListener(Break);
+            _pauseButton.onClick.AddListener(Pause);
+            _resumeButton.onClick.AddListener(Resume);
+            _settingsButton.onClick.AddListener(OpenSettings);
+            _exitSceneButton.onClick.AddListener(ExitToMenu);
+            _exitSettingsButton.onClick.AddListener(ExitToPause);
         }
 
         private void OnDisable()
         {
-            _dieButton.onClick.RemoveListener(MakeBreak);
-        }
-
-        private void Start()
-        {
-            _pauseMenu = new PauseMenu(_panelPauseMenu);
-        }
-
-        public void PrintNumberOfAttempts(int number)
-        {
-            _labelNumberAttempts.text = $"x{number}";
+            _breakButton.onClick.RemoveListener(Break);
+            _pauseButton.onClick.RemoveListener(Pause);
+            _resumeButton.onClick.RemoveListener(Resume);
+            _settingsButton.onClick.RemoveListener(OpenSettings);
+            _exitSceneButton.onClick.RemoveListener(ExitToMenu);
+            _exitSettingsButton.onClick.RemoveListener(ExitToPause);
         }
         
-        public void GameOver()
+        private void Break()
         {
-            _pauseMenu.Pause();
+            Broken?.Invoke();
         }
 
-        private void MakeBreak()
+        private void Pause()
         {
-            _breakController.MakeBreakIce();
+            Paused?.Invoke();
+        }
+
+        private void Resume()
+        {
+            Resumed?.Invoke();
+        }
+
+        private void OpenSettings()
+        {
+            SettingsOpened?.Invoke();
+        }
+
+        private void ExitToMenu()
+        {
+            OfSceneGetOut?.Invoke();
+        }
+
+        private void ExitToPause()
+        {
+            OfSettingsGetOut?.Invoke();
         }
     }
 }

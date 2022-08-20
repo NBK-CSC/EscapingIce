@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Entities.Сhangeable
+namespace Models.Сhangeable
 {
     [RequireComponent(typeof(BoxCollider))]
     public class Melter:MonoBehaviour

@@ -1,9 +1,8 @@
-using Entities.AbstractEnvironmentObjects;
 using UnityEngine;
 
-namespace Entities.BarrierObjects
+namespace Models.BorderObjects
 {
-    public abstract class Barrier : LocalEnvironmentObject, IBarrier
+    public class Border : MonoBehaviour, IBorder
     {
         private void OnTriggerEnter(Collider other)
         {

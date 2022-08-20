@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Entities.AbstractEnvironmentObjects;
+using Models.AbstractEnvironmentObjects;
 using UnityEngine;
 using Random = System.Random;
 

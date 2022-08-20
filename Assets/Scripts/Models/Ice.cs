@@ -1,10 +1,8 @@
-using Entities.BarrierObjects;
-using Entities.BorderObjects;
-using Entities.Сhangeable;
+using Models.Сhangeable;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Entities
+namespace Models
 {
     [RequireComponent(typeof(Mover),typeof(Melter))]
     public class Ice : MonoBehaviour
