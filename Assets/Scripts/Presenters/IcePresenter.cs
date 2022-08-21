@@ -1,5 +1,4 @@
 using System.Collections;
-using Entities;
 using Models;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,38 +9,36 @@ namespace Presenters
     public class IcePresenter : MonoBehaviour
     {
         [SerializeField] private float _timeDelayBreak;
-        [SerializeField] private Transform _startPoint;
         [SerializeField] private Ice _ice;
 
         private IView _view;
-        
-        public event UnityAction IceBroken;
-        public event UnityAction<Vector3> OnSurfaceIceBroken;
+        private Breaker _breaker;
 
+        public event UnityAction IceBroken;
+        
         public void Init(IView view)
         {
             _view = view;
+            _breaker = new Breaker(_ice, _view);
         }
 
         public void Enable()
         {
             _ice.Broken += AppearIce;
-            _view.Broken += AppearIce;
+            _breaker.Enable();
         }
 
         public void Disable()
         {
             _ice.Broken -= AppearIce;
-            _view.Broken -= AppearIce;
+            _breaker.Disable();
         }
 
         private IEnumerator DelayBroke()
         {
             yield return new WaitForSeconds(_timeDelayBreak);
             IceBroken?.Invoke();
-            if (_ice.IsOnSurface)
-                OnSurfaceIceBroken?.Invoke(_ice.transform.position);
-            _ice.transform.position = _startPoint.position;
+            _ice.SetDefault();
         }
 
         private void AppearIce()

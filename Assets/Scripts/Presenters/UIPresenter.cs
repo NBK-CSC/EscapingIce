@@ -6,6 +6,7 @@ namespace Presenters
 {
     public class UIPresenter : MonoBehaviour
     {
+        [SerializeField] private IcePresenter _icePresenter;
         [SerializeField] private Text _numberAttemptsLabel;
         [SerializeField] private GameObject _pausePanel;
         [SerializeField] private GameObject _settingsPanel;
@@ -22,7 +23,7 @@ namespace Presenters
 
         public void Enable()
         {
-            _view.Broken += DecreaseNumberIce;
+            _icePresenter.IceBroken += DecreaseNumberIce;
             _view.Paused += Pause;
             _view.Resumed += Resume;
             _view.SettingsOpened += OpenSettings;
@@ -31,7 +32,7 @@ namespace Presenters
 
         public void Disable()
         {
-            _view.Broken -= DecreaseNumberIce;
+            _icePresenter.IceBroken -= DecreaseNumberIce;
             _view.Paused -= Pause;
             _view.Resumed -= Resume;
             _view.SettingsOpened -= OpenSettings;

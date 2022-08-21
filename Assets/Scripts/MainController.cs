@@ -5,8 +5,8 @@ using Views;
 public class MainController : MonoBehaviour
 {
     [SerializeField] private int _numberAttempts;
-    [SerializeField] private IcePresenter icePresenter;
-    [SerializeField] private UIPresenter uiPresenter;
+    [SerializeField] private IcePresenter _icePresenter;
+    [SerializeField] private UIPresenter _uiPresenter;
     [SerializeField] private UIGameView _uiGameView;
         
     private TimePresenter _timePresenter;
@@ -14,21 +14,21 @@ public class MainController : MonoBehaviour
     private void Awake()
     {
         _timePresenter = new TimePresenter(_uiGameView);
-        uiPresenter.Init(_uiGameView, _numberAttempts);
-        icePresenter.Init(_uiGameView);
+        _uiPresenter.Init(_uiGameView, _numberAttempts);
+        _icePresenter.Init(_uiGameView);
     }
 
     private void OnEnable()
     {
         _timePresenter.Enable();
-        uiPresenter.Enable();
-        icePresenter.Enable();
+        _uiPresenter.Enable();
+        _icePresenter.Enable();
     }
         
     private void OnDisable()
     {
         _timePresenter.Disable();
-        uiPresenter.Disable();
-        icePresenter.Disable();
+        _uiPresenter.Disable();
+        _icePresenter.Disable();
     }
 }

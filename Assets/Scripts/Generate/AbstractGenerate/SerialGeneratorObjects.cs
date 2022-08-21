@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Models.AbstractEnvironmentObjects;
 using UnityEngine;
 
@@ -9,8 +8,6 @@ namespace Generate.AbstractGenerate
         [SerializeField] private int _maxNumberObjectsOnScene;
         [SerializeField] private T _startEnvironmentObject;
         
-        protected List<T> _activeObjectsOnScene = new List<T>();
-
         protected override void Start()
         {
             base.Start();

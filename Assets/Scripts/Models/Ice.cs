@@ -9,7 +9,7 @@ namespace Models
     {
         [SerializeField] private float _distanceCheckGround;
         [SerializeField] private float _lateralMotionReductionFactor;
-        
+        [SerializeField] private Transform _startPoint;
         [SerializeField] private Transform _checkRightGroundRay;
         [SerializeField] private Transform _checkLeftGroundRay;
 
@@ -17,6 +17,7 @@ namespace Models
         private Mover _mover;
         private BoxCollider _boxCollider;
         private bool _isOnSurface;
+        private bool _isBroken;
 
         public bool IsOnSurface => _isOnSurface;
 
@@ -49,12 +50,16 @@ namespace Models
 
         private void FixedUpdate()
         {
+            Debug.Log(_isOnSurface);
             if (IsLocateOnGround()!=_isOnSurface)
                 NotifySurfaceChanges();
             if (TryBecomePuddle())
                 Break();
-            var valueAxisX = _isOnSurface?_iceInput.Ice.Move.ReadValue<float>():0f;
-            _mover.Move(new Vector3(valueAxisX*_lateralMotionReductionFactor, 0, 1));
+            if (!_isBroken)
+            {
+                var valueAxisX = _isOnSurface ? _iceInput.Ice.Move.ReadValue<float>() : 0f;
+                _mover.Move(new Vector3(valueAxisX * _lateralMotionReductionFactor, 0, 1));
+            }
         }
 
         private void NotifySurfaceChanges()
@@ -79,9 +84,18 @@ namespace Models
                    Physics.Raycast(rayLeft, out RaycastHit hit2, _distanceCheckGround);
         }
 
+        public void SetDefault()
+        {
+            _isBroken = false;
+            transform.position = _startPoint.position;
+        }
+
         public void Break()
         {
+            if (_isBroken)
+                return;
             Broken?.Invoke();
+            _isBroken = true;
         }
     }
 }

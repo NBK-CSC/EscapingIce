@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ObjectPool;
 using UnityEngine;
 
@@ -15,11 +16,13 @@ namespace Generate.AbstractGenerate
 
         protected Vector3 GenerateDirection => _generateDirection;
 
+        protected List<T> _activeObjectsOnScene;
         private PoolMono<T> _pool;
 
         protected virtual void Start()
         {
             _generateDirection.Normalize();
+            _activeObjectsOnScene = new List<T>();
             Init();
         }
 

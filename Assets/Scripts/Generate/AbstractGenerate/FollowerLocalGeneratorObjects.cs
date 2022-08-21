@@ -13,7 +13,7 @@ namespace Generate.AbstractGenerate
         protected virtual void Update()
         {
             if (_target.position.z - _occupiedPlaces[_occupiedPlaces.Count-1].z >= _spawnDistanceBetweenBarrier)
-                LocalSpawnObjects(OrientDirection(_target.position  + GenerateDirection*_spawnDistanceFromTarget));
+                LocalSpawnObjects(OrientDirection(_target.position  + GenerateDirection * _spawnDistanceFromTarget));
         }
     }
 }

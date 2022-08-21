@@ -3,51 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="9ee59eac-49cd-4a6f-a34a-acb87c547ebe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BreakController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BreakController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/IceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/IceController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/MainController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PuddlesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/PuddlesSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PuddlesController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/PuddlesSpawner.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Counters/CounterPoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Counters/CounterPoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/EnvironmentObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/EnvironmentObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/EnvironmentObject.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/LocalEnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/LocalEnvironmentObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/LocalEnvironmentObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/LocalEnvironmentObject.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/SerialEnvironmentObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/SerialEnvironmentObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/AbstractEnvironmentObjects/SerialEnvironmentObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/AbstractEnvironmentObjects/SerialEnvironmentObject.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Barrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Barrier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Barrier.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Barrier.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Beer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Beer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Beer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Beer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Fork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Fork.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Fork.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Fork.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Glass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Glass.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/Glass.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Glass.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/IBarrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/IBarrier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BarrierObjects/IBarrier.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/IBarrier.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects/Border.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/Border.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects/Border.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/Border.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects/IBorder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/IBorder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/BorderObjects/IBorder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/IBorder.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Desk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Desk.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Desk.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Desk.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Ice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Ice.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Puddle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Puddle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Puddle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Puddle.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Сhangeable.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Melter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Сhangeable/Melter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Melter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Сhangeable/Melter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Mover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Сhangeable/Mover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Сhangeable/Mover.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Сhangeable/Mover.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PauseMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PauseMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/bear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/bear.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/fork.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/fork.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/glass.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/glass.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ice.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ice.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/FollowerLocalGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/FollowerLocalGeneratorObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/GeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/GeneratorObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/SerialGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/SerialGeneratorObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/PuddlesSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/PuddlesSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presenters/IcePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presenters/IcePresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presenters/UIPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presenters/UIPresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/UIGameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIGameView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ice.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ice.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ice.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +134,9 @@
       <workItem from="1661004672845" duration="491000" />
       <workItem from="1661005683241" duration="2674000" />
       <workItem from="1661015333721" duration="1610000" />
+      <workItem from="1661032162962" duration="1067000" />
+      <workItem from="1661077035710" duration="2162000" />
+      <workItem from="1661091021200" duration="8852000" />
     </task>
     <servers />
   </component>

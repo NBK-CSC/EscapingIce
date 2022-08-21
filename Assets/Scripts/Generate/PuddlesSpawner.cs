@@ -1,4 +1,4 @@
-using Entities;
+using System.Collections;
 using Models;
 using ObjectPool;
 using Presenters;
@@ -11,8 +11,9 @@ namespace Generate
         [SerializeField] private int _amountPuddle;
         [SerializeField] private Puddle _puddlePrefab;
         [SerializeField] private Transform _puddleContainer;
-        [SerializeField] private IcePresenter icePresenter;
-        [SerializeField] private float _offcetY;
+        [SerializeField] private Ice _ice;
+        [SerializeField] private float _offsetY;
+        [SerializeField] private float _timeRespawn;
         
         private PoolMono<Puddle> _poolPuddles;
 
@@ -23,19 +24,27 @@ namespace Generate
 
         private void OnEnable()
         {
-            icePresenter.OnSurfaceIceBroken += SpawnPuddle;
+            _ice.Broken += SpawnPuddle;
         } 
         private void OnDisable()
         {
-            icePresenter.OnSurfaceIceBroken += SpawnPuddle;
+            _ice.Broken += SpawnPuddle;
         } 
 
-        private void SpawnPuddle(Vector3 position)
+        private void SpawnPuddle()
         {
+            if (_ice.IsOnSurface)
+                StartCoroutine(DelaySpawn());
+        }
+
+        private IEnumerator DelaySpawn()
+        {
+            yield return new WaitForSeconds(_timeRespawn);
             if (_poolPuddles.TryGetObject(out var puddle))
             {
-                puddle.transform.position = new Vector3(position.x, _offcetY, position.z);
+                var position = _ice.transform.position;
+                puddle.transform.position = new Vector3(position.x, _offsetY, position.z);
             }
-        }   
+        }
     }
 }

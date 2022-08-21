@@ -16,7 +16,6 @@ namespace Generate.AbstractGenerate
         [SerializeField] private Vector3 _leftPointDirection;
         [SerializeField] private Vector3 _rightPointDirection;
         
-        protected List<T> _activeObjectsOnScene = new List<T>();
         protected static List<Vector3> _occupiedPlaces = new List<Vector3>();
         
         protected override void Start()
