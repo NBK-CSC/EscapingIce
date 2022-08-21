@@ -3,25 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9ee59eac-49cd-4a6f-a34a-acb87c547ebe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/bear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/bear.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/fork.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/fork.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/glass.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/glass.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ice.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ice.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/FollowerLocalGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/FollowerLocalGeneratorObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/GeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/GeneratorObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/LocalGeneratorObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/SerialGeneratorObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/AbstractGenerate/SerialGeneratorObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animators/AnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animators/AnimatorController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/PuddlesSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/PuddlesSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Barrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Barrier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/Border.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/Border.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Breaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Breaker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presenters/IcePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presenters/IcePresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presenters/UIPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presenters/UIPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/UIGameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/UIGameView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ice.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ice.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ice.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/ice.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +26,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2CvytHSs8f48IAlGHDBkxOJ8fV0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -136,7 +126,7 @@
       <workItem from="1661015333721" duration="1610000" />
       <workItem from="1661032162962" duration="1067000" />
       <workItem from="1661077035710" duration="2162000" />
-      <workItem from="1661091021200" duration="8852000" />
+      <workItem from="1661091021200" duration="10092000" />
     </task>
     <servers />
   </component>

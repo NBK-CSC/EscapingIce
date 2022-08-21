@@ -1,4 +1,5 @@
 using System.Collections;
+using BreakStates;
 using Models;
 using UnityEngine;
 using UnityEngine.Events;
@@ -41,7 +42,7 @@ namespace Presenters
             _ice.SetDefault();
         }
 
-        private void AppearIce()
+        private void AppearIce(BreakState breakState)
         {
             StartCoroutine(DelayBroke());
         }

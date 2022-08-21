@@ -1,3 +1,4 @@
+using BreakStates;
 using Views;
 
 namespace Models
@@ -25,7 +26,7 @@ namespace Models
         
         private void Break()
         {
-            _ice.Break();
+            _ice.Break(BreakState.SelfBreak);
         }
     }
 }

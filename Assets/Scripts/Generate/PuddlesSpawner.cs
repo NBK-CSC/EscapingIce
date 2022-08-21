@@ -1,4 +1,5 @@
 using System.Collections;
+using BreakStates;
 using Models;
 using ObjectPool;
 using Presenters;
@@ -31,9 +32,9 @@ namespace Generate
             _ice.Broken += SpawnPuddle;
         } 
 
-        private void SpawnPuddle()
+        private void SpawnPuddle(BreakState breakState)
         {
-            if (_ice.IsOnSurface)
+            if (breakState==BreakState.Crashed || breakState==BreakState.Melt || breakState==BreakState.SelfBreak)
                 StartCoroutine(DelaySpawn());
         }
 

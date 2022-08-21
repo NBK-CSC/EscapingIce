@@ -1,3 +1,4 @@
+using BreakStates;
 using Models.Сhangeable;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,7 +24,7 @@ namespace Models
 
         public event UnityAction OnBoardFell;
         public event UnityAction OnBoardFellOff;
-        public event UnityAction Broken;
+        public event UnityAction<BreakState> Broken;
 
         private void Awake()
         {
@@ -50,11 +51,10 @@ namespace Models
 
         private void FixedUpdate()
         {
-            Debug.Log(_isOnSurface);
             if (IsLocateOnGround()!=_isOnSurface)
                 NotifySurfaceChanges();
             if (TryBecomePuddle())
-                Break();
+                Break(BreakState.Melt);
             if (!_isBroken)
             {
                 var valueAxisX = _isOnSurface ? _iceInput.Ice.Move.ReadValue<float>() : 0f;
@@ -90,11 +90,11 @@ namespace Models
             transform.position = _startPoint.position;
         }
 
-        public void Break()
+        public void Break(BreakState breakState)
         {
             if (_isBroken)
                 return;
-            Broken?.Invoke();
+            Broken?.Invoke(breakState);
             _isBroken = true;
         }
     }

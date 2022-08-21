@@ -1,4 +1,5 @@
 using System;
+using BreakStates;
 using Models;
 using UnityEngine;
 
@@ -25,9 +26,9 @@ namespace Animators
             _ice.Broken -= Break;
         }
 
-        private void Break()
+        private void Break(BreakState breakState)
         {
-            if (_ice.IsOnSurface)
+            if (breakState == BreakState.SelfBreak)
                 _animator.SetTrigger("Break");
         }
     }

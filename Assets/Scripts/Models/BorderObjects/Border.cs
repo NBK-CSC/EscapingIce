@@ -1,3 +1,4 @@
+using BreakStates;
 using UnityEngine;
 
 namespace Models.BorderObjects
@@ -7,7 +8,7 @@ namespace Models.BorderObjects
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.TryGetComponent<Ice>(out var ice))
-                ice.Break();
+                ice.Break(BreakState.Fell);
         }
     }
 }
