@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Views
 {
-    public class UIGameView : MonoBehaviour, IView
+    public class UIGameView : MonoBehaviour, IGameView
     {
         [Header("1 layer UI")]
         [SerializeField] private Button _breakButton;
@@ -19,10 +19,10 @@ namespace Views
         
         public event Action Broken;
         public event Action Paused;
-        public event Action Resumed;
+        public event Action Played;
         public event Action SettingsOpened;
         public event Action OfSettingsGetOut;
-        public event Action OfSceneGetOut;
+        public event Action Exited;
         
         private void OnEnable()
         {
@@ -56,7 +56,7 @@ namespace Views
 
         private void Resume()
         {
-            Resumed?.Invoke();
+            Played?.Invoke();
         }
 
         private void OpenSettings()
@@ -66,7 +66,7 @@ namespace Views
 
         private void ExitToMenu()
         {
-            OfSceneGetOut?.Invoke();
+            Exited?.Invoke();
         }
 
         private void ExitToPause()

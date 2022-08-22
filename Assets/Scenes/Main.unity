@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 40417153}
   - component: {fileID: 40417154}
   m_Layer: 0
-  m_Name: UIView
+  m_Name: UIGameView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _numberAttempts: 10
   _icePresenter: {fileID: 380513004}
-  _uiPresenter: {fileID: 613079280}
+  _uiGamePresenter: {fileID: 613079280}
   _uiGameView: {fileID: 40417154}
 --- !u!114 &275700228
 MonoBehaviour:
@@ -1130,7 +1130,7 @@ GameObject:
   - component: {fileID: 613079279}
   - component: {fileID: 613079280}
   m_Layer: 0
-  m_Name: UIPresenter
+  m_Name: UIGamePresenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

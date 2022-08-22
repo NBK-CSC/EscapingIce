@@ -4,19 +4,19 @@ using Views;
 
 namespace Presenters
 {
-    public class UIPresenter : MonoBehaviour
+    public class UIGamePresenter : MonoBehaviour
     {
         [SerializeField] private IcePresenter _icePresenter;
         [SerializeField] private Text _numberAttemptsLabel;
         [SerializeField] private GameObject _pausePanel;
         [SerializeField] private GameObject _settingsPanel;
 
-        private IView _view;
+        private IGameView _gameView;
         private int _numberAttempts;
 
-        public void Init(IView view, int numberAttempts)
+        public void Init(IGameView gameView, int numberAttempts)
         {
-            _view = view;
+            _gameView = gameView;
             _numberAttempts = numberAttempts;
             PrintNumberOfAttempts(_numberAttempts);
         }
@@ -24,19 +24,19 @@ namespace Presenters
         public void Enable()
         {
             _icePresenter.IceBroken += DecreaseNumberIce;
-            _view.Paused += Pause;
-            _view.Resumed += Resume;
-            _view.SettingsOpened += OpenSettings;
-            _view.OfSettingsGetOut += ExitSettings;
+            _gameView.Paused += Pause;
+            _gameView.Played += Resume;
+            _gameView.SettingsOpened += OpenSettings;
+            _gameView.OfSettingsGetOut += ExitSettings;
         }
 
         public void Disable()
         {
             _icePresenter.IceBroken -= DecreaseNumberIce;
-            _view.Paused -= Pause;
-            _view.Resumed -= Resume;
-            _view.SettingsOpened -= OpenSettings;
-            _view.OfSettingsGetOut -= ExitSettings;
+            _gameView.Paused -= Pause;
+            _gameView.Played -= Resume;
+            _gameView.SettingsOpened -= OpenSettings;
+            _gameView.OfSettingsGetOut -= ExitSettings;
         }
         
         private void Pause()

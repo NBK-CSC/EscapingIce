@@ -12,15 +12,15 @@ namespace Presenters
         [SerializeField] private float _timeDelaySpawn;
         [SerializeField] private Ice _ice;
 
-        private IView _view;
+        private IGameView _gameView;
         private Breaker _breaker;
 
         public event UnityAction IceBroken;
         
-        public void Init(IView view)
+        public void Init(IGameView gameView)
         {
-            _view = view;
-            _breaker = new Breaker(_ice, _view);
+            _gameView = gameView;
+            _breaker = new Breaker(_ice, _gameView);
         }
 
         public void Enable()

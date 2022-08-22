@@ -5,22 +5,22 @@ namespace Models.Сhangeable
     public class Breaker
     {
         private Ice _ice;
-        private IView _view;
+        private IGameView _gameView;
 
-        public Breaker(Ice ice, IView view)
+        public Breaker(Ice ice, IGameView gameView)
         {
             _ice = ice;
-            _view = view;
+            _gameView = gameView;
         }
 
         public void Enable()
         {
-            _view.Broken += Break;
+            _gameView.Broken += Break;
         }
 
         public void Disable()
         {
-            _view.Broken -= Break;
+            _gameView.Broken -= Break;
         }
         
         private void Break()
