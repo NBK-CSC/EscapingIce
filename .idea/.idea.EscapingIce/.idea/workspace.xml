@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9ee59eac-49cd-4a6f-a34a-acb87c547ebe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscapingIce/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/IceAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/IceAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/SelfBreak.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/SelfBreak.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animators/AnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animators/AnimatorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BreakStates.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BreakStates/BreakState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BreakStates/BreakState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Generate/PuddlesSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Generate/PuddlesSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Barrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BarrierObjects/Barrier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/Border.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/BorderObjects/Border.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Breaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Breaker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Models/Ice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presenters/IcePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presenters/IcePresenter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +120,7 @@
       <workItem from="1661032162962" duration="1067000" />
       <workItem from="1661077035710" duration="2162000" />
       <workItem from="1661091021200" duration="10652000" />
-      <workItem from="1661154674452" duration="3789000" />
+      <workItem from="1661154674452" duration="5132000" />
     </task>
     <servers />
   </component>

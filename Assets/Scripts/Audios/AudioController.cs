@@ -1,17 +1,19 @@
 using Models;
 using UnityEngine;
 
-namespace Animators
+namespace Audios
 {
-    [RequireComponent(typeof(Animator))]
-    public class AnimatorController : MonoBehaviour
+    [RequireComponent(typeof(AudioSource))]
+    public class AudioController : MonoBehaviour
     {
-        private Animator _animator;
+        [SerializeField] private AudioClip _breakAudio;
+        
+        private AudioSource _audioSource;
         private Ice _ice;
 
         private void Awake()
         {
-            _animator = GetComponent<Animator>();
+            _audioSource = GetComponent<AudioSource>();
             _ice = GetComponent<Ice>();
         }
 
@@ -27,8 +29,7 @@ namespace Animators
 
         private void Break(BreakState breakState)
         {
-            if (breakState == BreakState.SelfBreak)
-                _animator.SetTrigger("Break");
+            _audioSource.PlayOneShot(_breakAudio);
         }
     }
 }
