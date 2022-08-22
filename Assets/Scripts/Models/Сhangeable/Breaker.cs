@@ -1,6 +1,6 @@
 using Views;
 
-namespace Models
+namespace Models.Сhangeable
 {
     public class Breaker
     {

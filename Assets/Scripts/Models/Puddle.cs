@@ -1,3 +1,4 @@
+using Models.Сhangeable;
 using UnityEngine;
 
 namespace Models
@@ -6,6 +7,10 @@ namespace Models
     {
         [SerializeField] private float _acceleration;
 
-        public float Acceleration => _acceleration;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent<Mover>(out var mover))
+                mover.SpeedUp(_acceleration);
+        }
     }
 }

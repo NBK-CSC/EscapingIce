@@ -16,16 +16,22 @@ namespace Models.Сhangeable
             _rigidbody = transform.GetComponent<Rigidbody>();
         }
         
+        private void ReduceFastSpeed(float slowdown)
+        {
+            if (_speed > _minSpeed)
+                _speed -= slowdown;
+        }
+        
         public void Move(Vector3 dirMovement)
         {
             _rigidbody.MovePosition(_rigidbody.position + _speed * dirMovement);
             ReduceFastSpeed(_frictionFactor);
         }
-        
-        private void ReduceFastSpeed(float slowdown)
+
+        public void SpeedUp(float speed)
         {
-            if (_speed > _minSpeed)
-                _speed -= slowdown;
+            if (speed > _speed)
+                _speed = speed;
         }
     }
 }
