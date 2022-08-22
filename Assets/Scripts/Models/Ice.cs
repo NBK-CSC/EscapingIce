@@ -1,10 +1,17 @@
-using BreakStates;
 using Models.Сhangeable;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Models
 {
+    public enum BreakState
+    {
+        SelfBreak,
+        Crash,
+        Fell,
+        Melt
+    }
+
     [RequireComponent(typeof(Mover),typeof(Melter))]
     public class Ice : MonoBehaviour
     {
@@ -13,7 +20,8 @@ namespace Models
         [SerializeField] private Transform _startPoint;
         [SerializeField] private Transform _checkRightGroundRay;
         [SerializeField] private Transform _checkLeftGroundRay;
-
+        [SerializeField] private Renderer _renderer;
+        
         private IceInput _iceInput;
         private Mover _mover;
         private BoxCollider _boxCollider;
@@ -84,9 +92,15 @@ namespace Models
                    Physics.Raycast(rayLeft, out RaycastHit hit2, _distanceCheckGround);
         }
 
+        public void DisableRender()
+        {
+            _renderer.enabled=false;
+        }
+
         public void SetDefault()
         {
             _isBroken = false;
+            _renderer.enabled = true;
             transform.position = _startPoint.position;
         }
 

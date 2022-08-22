@@ -1,8 +1,7 @@
 using System.Collections;
-using BreakStates;
+using System.Collections.Generic;
 using Models;
 using ObjectPool;
-using Presenters;
 using UnityEngine;
 
 namespace Generate
@@ -14,13 +13,21 @@ namespace Generate
         [SerializeField] private Transform _puddleContainer;
         [SerializeField] private Ice _ice;
         [SerializeField] private float _offsetY;
-        [SerializeField] private float _timeRespawn;
+        [SerializeField] private float _timeSpawnAfterSelfBreak;
+        [SerializeField] private float _timeSpawnAfterBreak;
         
         private PoolMono<Puddle> _poolPuddles;
+        private Dictionary<BreakState, float> _timeDelaySpawn;
 
         private void Start()
         {
             _poolPuddles = new PoolMono<Puddle>(_amountPuddle, _puddlePrefab, _puddleContainer);
+            _timeDelaySpawn = new Dictionary<BreakState, float>
+            {
+                { BreakState.Crash, _timeSpawnAfterBreak },
+                { BreakState.Melt, _timeSpawnAfterBreak },
+                { BreakState.SelfBreak, _timeSpawnAfterSelfBreak }
+            };
         }
 
         private void OnEnable()
@@ -34,13 +41,13 @@ namespace Generate
 
         private void SpawnPuddle(BreakState breakState)
         {
-            if (breakState==BreakState.Crashed || breakState==BreakState.Melt || breakState==BreakState.SelfBreak)
-                StartCoroutine(DelaySpawn());
+            if (breakState!=BreakState.Fell)
+                StartCoroutine(DelaySpawn(_timeDelaySpawn[breakState]));
         }
 
-        private IEnumerator DelaySpawn()
+        private IEnumerator DelaySpawn(float time)
         {
-            yield return new WaitForSeconds(_timeRespawn);
+            yield return new WaitForSeconds(time);
             if (_poolPuddles.TryGetObject(out var puddle))
             {
                 var position = _ice.transform.position;

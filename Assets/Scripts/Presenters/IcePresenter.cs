@@ -1,5 +1,4 @@
 using System.Collections;
-using BreakStates;
 using Models;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +8,7 @@ namespace Presenters
 {
     public class IcePresenter : MonoBehaviour
     {
-        [SerializeField] private float _timeDelayBreak;
+        [SerializeField] private float _timeDelaySpawn;
         [SerializeField] private Ice _ice;
 
         private IView _view;
@@ -25,26 +24,26 @@ namespace Presenters
 
         public void Enable()
         {
-            _ice.Broken += AppearIce;
+            _ice.Broken += SpawnIce;
             _breaker.Enable();
         }
 
         public void Disable()
         {
-            _ice.Broken -= AppearIce;
+            _ice.Broken -= SpawnIce;
             _breaker.Disable();
         }
 
-        private IEnumerator DelayBroke()
+        private void SpawnIce(BreakState breakState)
         {
-            yield return new WaitForSeconds(_timeDelayBreak);
+            StartCoroutine(DelaySpawnIce());
+        }
+        
+        private IEnumerator DelaySpawnIce()
+        {
+            yield return new WaitForSeconds(_timeDelaySpawn);
             IceBroken?.Invoke();
             _ice.SetDefault();
-        }
-
-        private void AppearIce(BreakState breakState)
-        {
-            StartCoroutine(DelayBroke());
         }
     }
 }
