@@ -699,6 +699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 275700226}
   - component: {fileID: 275700227}
+  - component: {fileID: 275700228}
   m_Layer: 0
   m_Name: MainController
   m_TagString: Untagged
@@ -736,6 +737,19 @@ MonoBehaviour:
   _icePresenter: {fileID: 380513004}
   _uiPresenter: {fileID: 613079280}
   _uiGameView: {fileID: 40417154}
+--- !u!114 &275700228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275700225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee794f77b6c4ff89c819243a3971182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: 9cc3fe7c7596f024d9e26967c013f0c6, type: 2}
 --- !u!1 &280224975
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca850f2250ce42e1b7fa493e02c907f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeDelayBreak: 0.3
+  _timeDelaySpawn: 0.5
   _ice: {fileID: 1339135699}
 --- !u!4 &380513005
 Transform:
@@ -1242,9 +1256,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: set_volume
+      - m_Target: {fileID: 275700228}
+        m_TargetAssemblyTypeName: Audios.MixerController, Assembly-CSharp
+        m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1582,42 +1596,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 94.66, y: 0.45248032, z: 50.055}
   m_Center: {x: -1.0999985, y: 0.16338348, z: -3.851016}
---- !u!1 &865230467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5494800731766402163, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
-  m_PrefabInstance: {fileID: 1875627240}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &865230472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865230467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be6a5d66dcb64a32b5e32a1f81963de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &865230473
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865230467}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 13b914dee94f9884cb45efba17a43688, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &927019310
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,7 +2293,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4647747760308939698, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
   m_PrefabInstance: {fileID: 1875627240}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865230467}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2da68771a784a8a4a8359c3cc2444e12, type: 3}
@@ -2575,6 +2553,7 @@ Transform:
   - {fileID: 380513005}
   - {fileID: 685366036}
   - {fileID: 613079279}
+  - {fileID: 1673295816}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2608,6 +2587,54 @@ Transform:
   m_Father: {fileID: 1190209150}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1673295815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1673295816}
+  - component: {fileID: 1673295817}
+  m_Layer: 0
+  m_Name: DisablerRender
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1673295816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673295815}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1583540994}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1673295817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673295815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe97e4640e74b75b89e8c5bb545c620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ice: {fileID: 1339135699}
+  _timeCrash: 0
+  _timeFell: 0
+  _timeMelt: 0
+  _timeSelfBreak: 0.17
 --- !u!1 &1709348990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,7 +2815,8 @@ MonoBehaviour:
   _puddleContainer: {fileID: 2046102779}
   _ice: {fileID: 1339135699}
   _offsetY: 0.94
-  _timeRespawn: 0.1
+  _timeSpawnAfterSelfBreak: 0.17
+  _timeSpawnAfterBreak: 0
 --- !u!1 &1832897463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,6 +2859,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3536623476604457657, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
+      propertyPath: _speed
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4647747760308939698, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
       propertyPath: _startPoint
       value: 
@@ -2883,13 +2915,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ice
       objectReference: {fileID: 0}
-    - target: {fileID: 5727049000604092305, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5727049000604092305, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
+    - target: {fileID: 7166733930316874685, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
+      propertyPath: _meltingFactor
+      value: 0.001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c92b923d2ebebea4c9f423d42d6a2804, type: 3}
@@ -3226,7 +3254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26280e91ab4b41c1956c743849398640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _smoothing: 5
+  _smoothing: 10
   _targetTransform: {fileID: 1066398572}
   _offset: {x: 0, y: 4, z: -4}
 --- !u!1 &2046102778
