@@ -4,22 +4,21 @@ using UnityEngine.UI;
 
 namespace Counters
 {
-    public class CounterPoints : MonoBehaviour
+    public class CounterPoints
     {
-        [SerializeField] private Camera _camera;
-        [SerializeField] private Text _label;
-    
+        private Vector3 _startPosition;
+        private Text _label;
         private int _points=0;
-        private Vector3 _lastPosition;
 
-        private void Start()
+        public CounterPoints(Text label, Vector3 startPosition)
         {
-            _lastPosition = _camera.transform.position;
+            _label = label;
+            _startPosition = startPosition;
         }
 
-        private void Update()
+        public void UpdatePoint(Vector3 currentPosition)
         { 
-            IncreasePoints((int)(_lastPosition - _camera.transform.position).z);
+            IncreasePoints((int)(_startPosition - currentPosition).z);
         }
 
         private void IncreasePoints(int count)

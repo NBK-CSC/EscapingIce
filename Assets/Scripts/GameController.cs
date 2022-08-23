@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     {
         _timePresenter = new TimePresenter(_uiGameView);
         _sceneSwitcher = new SceneSwitcher();
-        _uiGamePresenter.Init(_uiGameView, _numberAttempts);
+        _uiGamePresenter.Init(_uiGameView, _icePresenter, _numberAttempts);
         _icePresenter.Init(_uiGameView);
     }
 
@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
         _timePresenter.Enable();
         _uiGamePresenter.Enable();
         _icePresenter.Enable();
-        
         _uiGameView.Exited += Exit;
     }
         
@@ -35,8 +34,11 @@ public class GameController : MonoBehaviour
         _timePresenter.Disable();
         _uiGamePresenter.Disable();
         _icePresenter.Disable();
-        
         _uiGameView.Exited -= Exit;
+    }
+
+    private void EndGame()
+    {
     }
 
     private void Exit()
