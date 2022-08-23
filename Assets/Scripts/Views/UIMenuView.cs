@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Views
 {
-    public class UIMenuView : MonoBehaviour, IMenuView
+    public class UIMenuView : MonoBehaviour, IMenuButtonView
     {
         [Header("1 layer UI")]
         [SerializeField] private Button _playButton;

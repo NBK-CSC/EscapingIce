@@ -172,6 +172,8 @@ MonoBehaviour:
   _settingsButton: {fileID: 243617355}
   _exitSceneButton: {fileID: 1923956584}
   _exitSettingsButton: {fileID: 598823314}
+  _exitButton: {fileID: 838848050}
+  _playButton: {fileID: 523689306}
 --- !u!1 &66368552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1002,7 @@ GameObject:
   - component: {fileID: 523689307}
   - component: {fileID: 523689306}
   m_Layer: 5
-  m_Name: ExitButton
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1743,7 +1745,7 @@ GameObject:
   - component: {fileID: 838848051}
   - component: {fileID: 838848050}
   m_Layer: 5
-  m_Name: PlayButton
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -5,25 +5,25 @@ namespace Presenters
 {
     public class TimePresenter
     {
-        private IGameView _gameView;
+        private IGameButtonView _gameButtonView;
 
-        public TimePresenter(IGameView gameView)
+        public TimePresenter(IGameButtonView gameButtonView)
         {
-            _gameView = gameView;
+            _gameButtonView = gameButtonView;
         }
 
         public void Enable()
         {
-            _gameView.Paused += Stop;
-            _gameView.Played += Resume;
-            _gameView.Exited += Resume;
+            _gameButtonView.Paused += Stop;
+            _gameButtonView.Played += Resume;
+            _gameButtonView.Exited += Resume;
         }
 
         public void Disable()
         {
-            _gameView.Paused -= Stop;
-            _gameView.Played -= Resume;
-            _gameView.Exited -= Resume;
+            _gameButtonView.Paused -= Stop;
+            _gameButtonView.Played -= Resume;
+            _gameButtonView.Exited -= Resume;
         }
 
         private void Stop()

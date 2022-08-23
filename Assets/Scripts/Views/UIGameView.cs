@@ -1,10 +1,11 @@
 using System;
+using Counters;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Views
 {
-    public class UIGameView : MonoBehaviour, IGameView
+    public class UIGameView : MonoBehaviour, IGameButtonView
     {
         [Header("1 layer UI")]
         [SerializeField] private Button _breakButton;
@@ -16,6 +17,10 @@ namespace Views
         [SerializeField] private Button _exitSceneButton;
         [Header("3 layer UI")]
         [SerializeField] private Button _exitSettingsButton;
+        [Header("4 layer UI")]
+        [SerializeField] private Button _exitButton;
+        [SerializeField] private Button _playButton;
+
         
         public event Action Broken;
         public event Action Paused;
@@ -32,6 +37,8 @@ namespace Views
             _settingsButton.onClick.AddListener(OpenSettings);
             _exitSceneButton.onClick.AddListener(ExitToMenu);
             _exitSettingsButton.onClick.AddListener(ExitToPause);
+            _exitButton.onClick.AddListener(ExitToMenu);
+            _playButton.onClick.AddListener(Resume);
         }
 
         private void OnDisable()
@@ -42,6 +49,8 @@ namespace Views
             _settingsButton.onClick.RemoveListener(OpenSettings);
             _exitSceneButton.onClick.RemoveListener(ExitToMenu);
             _exitSettingsButton.onClick.RemoveListener(ExitToPause);
+            _exitButton.onClick.AddListener(ExitToMenu);
+            _playButton.onClick.AddListener(Resume);
         }
         
         private void Break()

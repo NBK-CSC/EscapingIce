@@ -2,9 +2,8 @@ using System;
 
 namespace Views
 {
-    public interface IGameView : IView
+    public interface IGameView
     {
-        public event Action Broken;
-        public event Action Paused;
+        public event Action GameOver;
     }
 }

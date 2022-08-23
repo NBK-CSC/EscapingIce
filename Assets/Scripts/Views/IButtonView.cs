@@ -2,7 +2,7 @@ using System;
 
 namespace Views
 {
-    public interface IView
+    public interface IButtonView
     {
         public event Action Played;
         public event Action SettingsOpened;

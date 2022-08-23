@@ -1,6 +1,4 @@
-using System;
 using Counters;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Views;
@@ -18,37 +16,39 @@ namespace Presenters
         [SerializeField] private GameObject _settingsPanel;
         [SerializeField] private GameObject _gameOverPanel;
 
-        private IGameView _gameView;
+        private IGameButtonView _gameButtonView;
         private CounterPoints _counterPoints;
         private CounterAttempts _counterAttempts;
         
-        public void Init(IGameView gameView, IcePresenter icePresenter, int numberAttempts)
+        public CounterAttempts CounterAttempts() => _counterAttempts;
+        
+        public void Init(IGameButtonView gameButtonView, IcePresenter icePresenter, int numberAttempts)
         {
-            _gameView = gameView;
+            _gameButtonView = gameButtonView;
             _counterPoints = new CounterPoints(_labelPoints, _cameraTransform.position);
             _counterAttempts = new CounterAttempts(icePresenter, _labelAttempts, numberAttempts);
         }
 
         public void Enable()
         {
-            _gameView.Paused += Pause;
-            _gameView.Played += Resume;
-            _gameView.SettingsOpened += OpenSettings;
-            _gameView.OfSettingsGetOut += ExitSettings;
+            _gameButtonView.Paused += Pause;
+            _gameButtonView.Played += Resume;
+            _gameButtonView.SettingsOpened += OpenSettings;
+            _gameButtonView.OfSettingsGetOut += ExitSettings;
             _counterAttempts.Enable();
             _counterAttempts.AttemptsOver += OpenGameOverPanel;
         }
 
         public void Disable()
         {
-            _gameView.Paused -= Pause;
-            _gameView.Played -= Resume;
-            _gameView.SettingsOpened -= OpenSettings;
-            _gameView.OfSettingsGetOut -= ExitSettings;
+            _gameButtonView.Paused -= Pause;
+            _gameButtonView.Played -= Resume;
+            _gameButtonView.SettingsOpened -= OpenSettings;
+            _gameButtonView.OfSettingsGetOut -= ExitSettings;
             _counterAttempts.Disable();
             _counterAttempts.AttemptsOver -= OpenGameOverPanel;
         }
-
+        
         private void Update()
         {
             _counterPoints.UpdatePoint(_cameraTransform.position);

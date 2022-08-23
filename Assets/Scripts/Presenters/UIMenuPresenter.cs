@@ -9,27 +9,27 @@ namespace Presenters
         [SerializeField] private GameObject _settingsPanel;
         [SerializeField] private GameObject _othersPanel;
 
-        private IMenuView _menuView;
+        private IMenuButtonView _menuButtonView;
 
-        public void Init(IMenuView menuView)
+        public void Init(IMenuButtonView menuButtonView)
         {
-            _menuView = menuView;
+            _menuButtonView = menuButtonView;
         }
 
         public void Enable()
         {
-            _menuView.SettingsOpened += OpenSettings;
-            _menuView.OfSettingsGetOut += CloseSettings;
-            _menuView.OthersOpened += OpenOthers;
-            _menuView.OfOthersGetOut += CloseOthers;
+            _menuButtonView.SettingsOpened += OpenSettings;
+            _menuButtonView.OfSettingsGetOut += CloseSettings;
+            _menuButtonView.OthersOpened += OpenOthers;
+            _menuButtonView.OfOthersGetOut += CloseOthers;
         }
 
         public void Disable()
         {
-            _menuView.SettingsOpened -= OpenSettings;
-            _menuView.OfSettingsGetOut -= CloseSettings;
-            _menuView.OthersOpened -= OpenOthers;
-            _menuView.OfOthersGetOut -= CloseOthers;
+            _menuButtonView.SettingsOpened -= OpenSettings;
+            _menuButtonView.OfSettingsGetOut -= CloseSettings;
+            _menuButtonView.OthersOpened -= OpenOthers;
+            _menuButtonView.OfOthersGetOut -= CloseOthers;
         }
         
         private void OpenSettings()

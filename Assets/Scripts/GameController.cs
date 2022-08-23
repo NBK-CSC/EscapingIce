@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     
     private TimePresenter _timePresenter;
     private SceneSwitcher _sceneSwitcher;
+    private GameView _gameView;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class GameController : MonoBehaviour
         _sceneSwitcher = new SceneSwitcher();
         _uiGamePresenter.Init(_uiGameView, _icePresenter, _numberAttempts);
         _icePresenter.Init(_uiGameView);
+        _gameView = new GameView(_uiGamePresenter.CounterAttempts());
     }
 
     private void OnEnable()
@@ -26,7 +28,9 @@ public class GameController : MonoBehaviour
         _timePresenter.Enable();
         _uiGamePresenter.Enable();
         _icePresenter.Enable();
+        _gameView.Enable();
         _uiGameView.Exited += Exit;
+        _gameView.GameOver += EndGame;
     }
         
     private void OnDisable()
@@ -34,11 +38,14 @@ public class GameController : MonoBehaviour
         _timePresenter.Disable();
         _uiGamePresenter.Disable();
         _icePresenter.Disable();
+        _gameView.Disable();
         _uiGameView.Exited -= Exit;
+        _gameView.GameOver -= EndGame;
     }
 
     private void EndGame()
     {
+        
     }
 
     private void Exit()
