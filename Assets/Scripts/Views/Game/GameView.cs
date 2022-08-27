@@ -1,7 +1,7 @@
 using System;
 using Counters;
 
-namespace Views
+namespace Views.Game
 {
     public class GameView : IGameView
     {

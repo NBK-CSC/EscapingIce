@@ -2,6 +2,7 @@ using Counters;
 using UnityEngine;
 using UnityEngine.UI;
 using Views;
+using Views.Game;
 
 namespace Presenters
 {

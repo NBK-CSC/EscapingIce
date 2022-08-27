@@ -1,9 +1,8 @@
 using System;
-using Counters;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Views
+namespace Views.Game
 {
     public class UIGameView : MonoBehaviour, IGameButtonView
     {
@@ -24,6 +23,7 @@ namespace Views
         
         public event Action Broken;
         public event Action Paused;
+        public event Action Reloaded;
         public event Action Played;
         public event Action SettingsOpened;
         public event Action OfSettingsGetOut;
@@ -38,7 +38,7 @@ namespace Views
             _exitSceneButton.onClick.AddListener(ExitToMenu);
             _exitSettingsButton.onClick.AddListener(ExitToPause);
             _exitButton.onClick.AddListener(ExitToMenu);
-            _playButton.onClick.AddListener(Resume);
+            _playButton.onClick.AddListener(Reload);
         }
 
         private void OnDisable()
@@ -50,7 +50,7 @@ namespace Views
             _exitSceneButton.onClick.RemoveListener(ExitToMenu);
             _exitSettingsButton.onClick.RemoveListener(ExitToPause);
             _exitButton.onClick.AddListener(ExitToMenu);
-            _playButton.onClick.AddListener(Resume);
+            _playButton.onClick.AddListener(Reload);
         }
         
         private void Break()
@@ -81,6 +81,11 @@ namespace Views
         private void ExitToPause()
         {
             OfSettingsGetOut?.Invoke();
+        }
+
+        private void Reload()
+        {
+            Reloaded?.Invoke();
         }
     }
 }

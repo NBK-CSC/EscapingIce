@@ -1,7 +1,7 @@
 using Presenters;
 using UI;
 using UnityEngine;
-using Views;
+using Views.Menu;
 
 public class MenuController : MonoBehaviour
 {

@@ -1,7 +1,7 @@
 using Presenters;
 using UI;
 using UnityEngine;
-using Views;
+using Views.Game;
 
 public class GameController : MonoBehaviour
 {
@@ -16,11 +16,11 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        _timePresenter = new TimePresenter(_uiGameView);
         _sceneSwitcher = new SceneSwitcher();
         _uiGamePresenter.Init(_uiGameView, _icePresenter, _numberAttempts);
         _icePresenter.Init(_uiGameView);
         _gameView = new GameView(_uiGamePresenter.CounterAttempts());
+        _timePresenter = new TimePresenter(_uiGameView, _gameView);
     }
 
     private void OnEnable()
@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
         _icePresenter.Enable();
         _gameView.Enable();
         _uiGameView.Exited += Exit;
-        _gameView.GameOver += EndGame;
+        _uiGameView.Reloaded += ReloadLevel;
     }
         
     private void OnDisable()
@@ -40,12 +40,12 @@ public class GameController : MonoBehaviour
         _icePresenter.Disable();
         _gameView.Disable();
         _uiGameView.Exited -= Exit;
-        _gameView.GameOver -= EndGame;
+        _uiGameView.Reloaded += ReloadLevel;
     }
 
-    private void EndGame()
+    private void ReloadLevel()
     {
-        
+        _sceneSwitcher.SwitchToGameScene();
     }
 
     private void Exit()

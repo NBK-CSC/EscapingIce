@@ -1,6 +1,6 @@
 using System;
 
-namespace Views
+namespace Views.Game
 {
     public interface IGameView
     {

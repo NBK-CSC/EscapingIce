@@ -1,6 +1,6 @@
 using System;
 
-namespace Views
+namespace Views.Menu
 {
     public interface IMenuButtonView : IButtonView
     {
